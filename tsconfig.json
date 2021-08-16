@@ -18,5 +18,8 @@
       "@util": ["./src/util/index.ts"]
     }
   },
-  "include": ["./src"]
+  "include": [
+    "src/global.d.ts",
+    "src"
+  ]
 }
