@@ -8,6 +8,7 @@ const { getThemeVariables } = require('antd/dist/theme');
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  envDir: '.env',
   css: {
     preprocessorOptions: {
       less: {

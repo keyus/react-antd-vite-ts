@@ -1,11 +1,7 @@
 {
-  "name": "react-vite",
+  "name": "react-vite-template",
   "version": "0.0.0",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "serve": "vite preview"
-  },
+  "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "antd": "^4.16.11",
@@ -22,5 +18,10 @@
     "less": "4.1.1",
     "@rollup/plugin-node-resolve": "13.0.4",
     "@rollup/plugin-inject": "^4.0.2"
-  } 
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview"
+  }
 }

@@ -7,11 +7,13 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  console.log(import.meta.env)
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
+        <p>app name-{import.meta.env.VITE_APP_NAME}</p>
+        <p>app title-{import.meta.env.VITE_APP_TITLE}</p>
         <p>
           <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}
