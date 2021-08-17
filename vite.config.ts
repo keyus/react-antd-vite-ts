@@ -1,67 +1,74 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import styleImport from 'vite-plugin-style-import'
 import inject from '@rollup/plugin-inject'
+import { injectHtml } from 'vite-plugin-html'
 
 const path = require('path');
 const { getThemeVariables } = require('antd/dist/theme');
+const envDir = '.env';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  envDir: '.env',
-  css: {
-    preprocessorOptions: {
-      less: {
-        javascriptEnabled: true,
-        modifyVars: getThemeVariables({
-          dark: true,       // 开启暗黑模式
-          compact: true,    // 开启紧凑模式
-        }),
+export default defineConfig(({ mode,...config }) => {
+  return {
+    envDir,
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+          modifyVars: getThemeVariables({
+            dark: true,       // 开启暗黑模式
+            compact: true,    // 开启紧凑模式
+          }),
+        },
       },
     },
-  },
-  resolve: {
-    alias: {
-      '@util': path.resolve(__dirname, './src/util/index.ts'),
+    resolve: {
+      alias: {
+        '@util': path.resolve(__dirname, './src/util/index.ts'),
+      },
     },
-  },
 
-  plugins: [
-    reactRefresh(),
-    styleImport({
-      libs: [{
-        libraryName: 'antd',
-        esModule: true,
-        resolveStyle: (name) => {
-          return `antd/es/${name}/style/index`;
-        },
-      }]
-    }),
-    inject({
-      React: ['react', 'default'],
-      util: ['@util', 'default'],
-      ReactDOM: ['react-dom', 'default'],
-    })
-  ],
+    plugins: [
+      reactRefresh(),
+      styleImport({
+        libs: [{
+          libraryName: 'antd',
+          esModule: true,
+          resolveStyle: (name) => {
+            return `antd/es/${name}/style/index`;
+          },
+        }]
+      }),
+      inject({
+        React: ['react', 'default'],
+        util: ['@util', 'default'],
+        ReactDOM: ['react-dom', 'default'],
+      }),
+      injectHtml({
+        injectData: loadEnv(mode, envDir),
+      }),
+    ],
 
 
-  server: {
-    proxy: {
-      '/foo': 'http://localhost:4567/foo',
-      // '/api': {
-      //   target: 'http://jsonplaceholder.typicode.com',
-      //   changeOrigin: true,
-      //   rewrite: (path) => path.replace(/^\/api/, '')
-      // },
-      // '^/fallback/.*': {
-      //   target: 'http://jsonplaceholder.typicode.com',
-      //   changeOrigin: true,
-      //   rewrite: (path) => path.replace(/^\/fallback/, '')
-      // },
+    server: {
+      proxy: {
+        '/foo': 'http://localhost:4567/foo',
+        // '/api': {
+        //   target: 'http://jsonplaceholder.typicode.com',
+        //   changeOrigin: true,
+        //   rewrite: (path) => path.replace(/^\/api/, '')
+        // },
+        // '^/fallback/.*': {
+        //   target: 'http://jsonplaceholder.typicode.com',
+        //   changeOrigin: true,
+        //   rewrite: (path) => path.replace(/^\/fallback/, '')
+        // },
+      }
+    },
+    build: {
+      brotliSize: false,
+      chunkSizeWarningLimit: 2000,      //chunk大小警告限制
     }
-  },
-  build: {
-    brotliSize: false,
-    chunkSizeWarningLimit: 2000,      //chunk大小警告限制
   }
 })
