@@ -61,5 +61,6 @@ export default defineConfig({
   },
   build: {
     brotliSize: false,
+    chunkSizeWarningLimit: 2000,      //chunk大小警告限制
   }
 })
