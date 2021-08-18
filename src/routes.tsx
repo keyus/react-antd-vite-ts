@@ -15,30 +15,16 @@ const routes = (isLogin: boolean) => {
         { path: 'test', element: <Test /> },
       ],
     },
-
+    // {
+    //   path: 'member',
+    //   element: <Outlet />,
+    //   children: [
+    //     { path: 'ddd', element: <MemberGrid /> },
+    //     { path: 'aaa', element: <AddMember /> },
+    //   ],
+    // },
   ]
 }
 
 export default routes;
 
-
-/**
- * example
- * {
-    path: '/app',
-    element: isLoggedIn ? <DashboardLayout /> : <Navigate to="/login" />,
-    children: [
-      { path: '/dashboard', element: <Dashboard /> },
-      { path: '/account', element: <Account /> },
-      { path: '/', element: <Navigate to="/app/dashboard" /> },
-      {
-        path: 'member',
-        element: <Outlet />,
-        children: [
-          { path: '/', element: <MemberGrid /> },
-          { path: '/add', element: <AddMember /> },
-        ],
-      },
-    ],
-  },
- */

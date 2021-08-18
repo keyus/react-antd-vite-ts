@@ -1,16 +1,14 @@
 import { defineConfig, loadEnv } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
-// import legacy from '@vitejs/plugin-legacy'
 import styleImport from 'vite-plugin-style-import'
 import inject from '@rollup/plugin-inject'
 import { injectHtml } from 'vite-plugin-html'
-
+// import legacy from '@vitejs/plugin-legacy'
+// const { getThemeVariables } = require('antd/dist/theme');
 
 const path = require('path');
-const { getThemeVariables } = require('antd/dist/theme');
 const envDir = '.env';
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode, ...config }) => {
   return {
     envDir,
@@ -87,7 +85,7 @@ export default defineConfig(({ mode, ...config }) => {
       }
     },
     build: {
-      brotliSize: false,
+      brotliSize: false,                //不用分析报告
       chunkSizeWarningLimit: 2000,      //chunk大小警告限制
     }
   }

@@ -7,13 +7,13 @@ import store from '@store'
 import routes from './routes'
 import '@style/base.less'
 
-/**
+/** 
  * this is global util,
  * console.log(util);
  */
 
 function AppRoutes() {
-  const { isLogin } = useSelector((state: any) => state.user);
+  const { isLogin } = useSelector((state: Store.RootState) => state.user);
   return useRoutes(routes(isLogin));
 }
 

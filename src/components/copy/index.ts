@@ -7,6 +7,9 @@ interface Props {
     onCopy?(text: string, result: any): void
 }
 
+/**
+ * 复制内容
+ */
 export default (props: Props) => {
     const {
         text,
