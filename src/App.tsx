@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import { Button } from 'antd'
+import Copy from '@com/copy'
 import './App.css'
 
 
 function App() {
   const [count, setCount] = useState(0)
 
-  console.log(import.meta.env)
   return (
     <div className="App">
       <header className="App-header">
@@ -22,6 +22,8 @@ function App() {
           <Button type='primary'>hello</Button>
         </p>
         <p>
+        <Copy text='我是复制内容'><Button type='primary'>复制文本</Button></Copy>
+
           Edit <code>App.tsx</code> and save to test HMR updates.
         </p>
         <p>

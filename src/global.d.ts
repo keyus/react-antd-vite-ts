@@ -1,14 +1,21 @@
 
-import ReactDOM from 'react-dom'
 
 
-declare global {
-    const util: object;
-    const React: typeof React;
-    const ReactDOM: typeof ReactDOM;
-}
+declare var util: object
+declare var __REDUX_DEVTOOLS_EXTENSION__: () => any
+declare var React: any
+declare var ReactDOM: any
+
 
 interface ImportMetaEnv {
     VITE_APP_NAME: string,
     VITE_APP_TITLE: string,
 }
+
+declare namespace Store {
+    interface Action {
+        type: string
+        [key: string]: any
+    }
+}
+

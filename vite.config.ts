@@ -1,15 +1,17 @@
 import { defineConfig, loadEnv } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
+// import legacy from '@vitejs/plugin-legacy'
 import styleImport from 'vite-plugin-style-import'
 import inject from '@rollup/plugin-inject'
 import { injectHtml } from 'vite-plugin-html'
+
 
 const path = require('path');
 const { getThemeVariables } = require('antd/dist/theme');
 const envDir = '.env';
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode,...config }) => {
+export default defineConfig(({ mode, ...config }) => {
   return {
     envDir,
     css: {
@@ -25,7 +27,12 @@ export default defineConfig(({ mode,...config }) => {
     },
     resolve: {
       alias: {
-        '@util': path.resolve(__dirname, './src/util/index.ts'),
+        '@util': path.resolve(__dirname, 'src/util'),
+        '@com': path.resolve(__dirname, 'src/components'),
+        '@store': path.resolve(__dirname, 'src/store'),
+        '@config': path.resolve(__dirname, 'src/config'),
+        '@style': path.resolve(__dirname, 'src/assets/style'),
+        '@img': path.resolve(__dirname, 'src/assets/img'),
       },
     },
 
@@ -48,6 +55,18 @@ export default defineConfig(({ mode,...config }) => {
       injectHtml({
         injectData: loadEnv(mode, envDir),
       }),
+
+      //ie 兼容
+      // legacy({
+      //   targets: ['ie >= 11'],
+      //   additionalLegacyPolyfills: ['regenerator-runtime/runtime']
+      // })
+
+      // 自定义引入
+      // legacy({
+      //   polyfills: ['es.promise.finally', 'es/map', 'es/set'],
+      //   modernPolyfills: ['es.promise.finally']
+      // })
     ],
 
 
