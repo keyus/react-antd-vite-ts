@@ -1,28 +1,30 @@
-import './index.css'
-import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import { BrowserRouter, useRoutes } from 'react-router-dom'
 import { ConfigProvider } from 'antd'
-import { Provider } from 'react-redux'
+import { Provider, useSelector } from 'react-redux'
 import zhCN from 'antd/lib/locale/zh_CN';
 import store from '@store'
+import routes from './routes'
 import '@style/base.less'
-// import config from '@config'
-// import util from '@util'
 
 /**
  * this is global util,
+ * console.log(util);
  */
-// console.log(util);
+
+function AppRoutes() {
+  const { isLogin } = useSelector((state: any) => state.user);
+  return useRoutes(routes(isLogin));
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <ConfigProvider locale={zhCN}>
-        <App />
-      </ConfigProvider>
-    </Provider>
-  </React.StrictMode>
+  <Provider store={store}>
+    <ConfigProvider locale={zhCN}>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </ConfigProvider>
+  </Provider>
   ,
   document.getElementById('root')
 )

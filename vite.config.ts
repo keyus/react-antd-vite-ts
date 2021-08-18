@@ -18,10 +18,10 @@ export default defineConfig(({ mode, ...config }) => {
       preprocessorOptions: {
         less: {
           javascriptEnabled: true,
-          modifyVars: getThemeVariables({
-            dark: true,       // 开启暗黑模式
-            compact: true,    // 开启紧凑模式
-          }),
+          // modifyVars: getThemeVariables({
+          //   dark: true,       // 开启暗黑模式
+          //   compact: true,    // 开启紧凑模式
+          // }),
         },
       },
     },
@@ -33,6 +33,7 @@ export default defineConfig(({ mode, ...config }) => {
         '@config': path.resolve(__dirname, 'src/config'),
         '@style': path.resolve(__dirname, 'src/assets/style'),
         '@img': path.resolve(__dirname, 'src/assets/img'),
+        '@view': path.resolve(__dirname, 'src/view'),
       },
     },
 
