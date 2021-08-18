@@ -22,7 +22,7 @@ function App() {
           <Button type='primary'>hello</Button>
         </p>
         <p>
-        <Copy text='我是复制内容'><Button type='primary'>复制文本</Button></Copy>
+          <Copy text='我是复制内容'><Button type='primary'>复制文本</Button></Copy>
 
           Edit <code>App.tsx</code> and save to test HMR updates.
         </p>
