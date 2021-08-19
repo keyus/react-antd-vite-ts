@@ -15,9 +15,7 @@ interface ImportMetaEnv {
  * if add reducer add that name
  */
 declare namespace Store {
-    interface RootState {
-        user: any,
-    }
+
     interface Action {
         type: string
         [key: string]: any

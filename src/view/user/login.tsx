@@ -1,15 +1,14 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import { login } from '@store/user'
 
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const onFinish = (values: any) => {
         console.log('Success login:', values);
-        dispatch({
-            type: 'user/login'
-        })
+        dispatch(login({username:'stringss'}));
         navigate('/')
     };
 

@@ -1,11 +1,21 @@
-import { createStore, combineReducers } from 'redux'
-import * as reducer from './reducer'
+import { configureStore } from '@reduxjs/toolkit'
+import logger from 'redux-logger'
 
-export interface RootState {
-    user: any,
-}
+import user from './user'
+import test from './test'
 
-export default createStore(
-    combineReducers(reducer),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+export const store = configureStore({
+    reducer: {
+        user,
+        test,
+    },
+    middleware: (getDefaultMiddleware) => {
+        if (import.meta.env.DEV) {
+            return getDefaultMiddleware().concat([logger]);
+        }
+        return getDefaultMiddleware();
+    },
+    devTools: import.meta.env.DEV ? true : false,
+})
+export default store
+export type RootState = ReturnType<typeof store.getState>

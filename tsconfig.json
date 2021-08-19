@@ -20,6 +20,7 @@
       "@util/*": ["src/util/*"],
       "@com/*": ["src/components/*"],
       "@store" : ["src/store"],
+      "@store/*" : ["src/store/*"],
       "@config" : ["src/config"],
       "@style/*" : ["src/assets/style"],
       "@img/*" : ["src/assets/img"],

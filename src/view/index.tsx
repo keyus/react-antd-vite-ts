@@ -8,9 +8,7 @@ export default (props = {}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const onLogout = useCallback((): void => {
-        dispatch({
-            type: 'user/logout'
-        })
+        dispatch({type: 'logout'});
         navigate('/login')
     }, [])
     return (

@@ -4,6 +4,7 @@ import { ConfigProvider } from 'antd'
 import { Provider, useSelector } from 'react-redux'
 import zhCN from 'antd/lib/locale/zh_CN';
 import store from '@store'
+import type { RootState } from '@store'
 import routes from './routes'
 import '@style/base.less'
 
@@ -13,7 +14,7 @@ import '@style/base.less'
  */
 
 function AppRoutes() {
-  const { isLogin } = useSelector((state: Store.RootState) => state.user);
+  const { isLogin } = useSelector((state: RootState) => state.user);
   return useRoutes(routes(isLogin));
 }
 
