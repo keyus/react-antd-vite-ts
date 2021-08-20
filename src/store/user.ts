@@ -1,6 +1,5 @@
 
-import { createSlice, PayloadAction, original } from '@reduxjs/toolkit'
-import store from '@store';
+import { createSlice, original } from '@reduxjs/toolkit'
 
 let localUser: any = localStorage.getItem('user');
 try {

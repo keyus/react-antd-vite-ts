@@ -2,13 +2,24 @@ import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { login } from '@store/user'
+// import http from '@util/http'
+
+
+// const data = new FormData();
+// data.append('shouji', '');
+// data.append('appkey', '467');
+
+http.get('/query4', {
+    shouji: '1580281/=+6160',
+    appkey: '467',
+})
 
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const onFinish = (values: any) => {
         console.log('Success login:', values);
-        dispatch(login({username:'stringss'}));
+        dispatch(login({ username: 'stringss' }));
         navigate('/')
     };
 

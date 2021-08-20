@@ -49,6 +49,7 @@ export default defineConfig(({ mode, ...config }) => {
       inject({
         React: ['react', 'default'],
         util: ['@util', 'default'],
+        http: ['@util/http', 'default'],
         ReactDOM: ['react-dom', 'default'],
       }),
       injectHtml({
@@ -70,13 +71,17 @@ export default defineConfig(({ mode, ...config }) => {
 
 
     server: {
+      // https: true,
       proxy: {
-        '/foo': 'http://localhost:4567/foo',
-        // '/api': {
-        //   target: 'http://jsonplaceholder.typicode.com',
-        //   changeOrigin: true,
-        //   rewrite: (path) => path.replace(/^\/api/, '')
-        // },
+        // '/foo': 'http://localhost:4567/foo',
+        '/api/query4': {
+          target: 'https://way.jd.com/jisuapi',
+          changeOrigin: true,
+          rewrite: (path) => {
+            console.log('path', path)
+            return path.replace(/^\/api/, '');
+          }
+        },
         // '^/fallback/.*': {
         //   target: 'http://jsonplaceholder.typicode.com',
         //   changeOrigin: true,
