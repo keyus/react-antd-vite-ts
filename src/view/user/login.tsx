@@ -1,7 +1,7 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { UnlockOutlined, UserOutlined, MediumOutlined, ExclamationCircleOutlined } from '@ant-design/icons'
+import { UnlockOutlined, UserOutlined, MediumOutlined, ExclamationCircleOutlined, DribbbleOutlined } from '@ant-design/icons'
 import { login } from '@store/user'
 import './index.less'
 import { useState } from 'react';
@@ -11,6 +11,8 @@ const Login = () => {
     const dispatch = useDispatch();
 
     const [error, setError] = useState('');
+    const [visible, setVisible] = useState(true);
+
     const onFinish = (values: any) => {
         console.log('Success login:', values);
         // http is global const has get post method
@@ -54,7 +56,9 @@ const Login = () => {
 
                 <Form.Item
                     name="password"
-                    className='form-item'
+                    className={
+                        `form-item ${visible ? 'form-has-code' : ''}`
+                    }
                     validateStatus='success'
                     rules={[{ required: true, message: '请输入密码' }]}
                 >
@@ -63,6 +67,21 @@ const Login = () => {
                         onInput={() => setError('')}
                         placeholder='请输入密码' />
                 </Form.Item>
+
+                {
+                    visible &&
+                    <Form.Item
+                        name="code"
+                        className='form-item'
+                        validateStatus='success'
+                        rules={[{ required: true, message: '请输入验证码' }]}
+                    >
+                        <Input
+                            prefix={<DribbbleOutlined />}
+                            onInput={() => setError('')}
+                            placeholder='请输入验证码' />
+                    </Form.Item>
+                }
 
                 <div className='login-error'>
                     {
