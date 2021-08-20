@@ -1,0 +1,57 @@
+html,
+body,
+#root {
+    height: 100%;
+}
+
+.main-layout {
+    height: 100%;
+
+    .main-side {
+        background-color: #252f3e;
+
+        .main-logo {
+            height          : 64px;
+            background-color: #1b2330;
+            color           : #fff;
+            display         : flex;
+            align-items     : center;
+            padding-left    : 10px;
+        }
+    }
+
+    .main-body {
+        .main-header {
+            background-color: #fff;
+            display         : flex;
+            align-items     : center;
+            line-height     : inherit;
+            padding         : 0 20px;
+
+            .left {
+                flex: 1;
+            }
+
+            .right {
+
+                .user {
+                    display      : block;
+                    padding      : 10px;
+                    border-radius: 15px;
+                    cursor       : pointer;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.04);
+                    }
+
+                    .name {
+                        margin-right: 10px;
+                        font-weight : 500;
+                    }
+                }
+            }
+        }
+    }
+
+    // height: 100vh;
+}
