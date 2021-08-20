@@ -13,7 +13,6 @@ interface FetchOptions {
 interface Http {
     get(url: string, data?: QueryStringData, options?: FetchOptions): Promise<any>
     post(url: string, data?: QueryStringData, options?: FetchOptions): Promise<any>
-    [key: string]: any
 }
 
 declare const util: Obj
