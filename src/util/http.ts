@@ -38,13 +38,13 @@ class Http implements Http {
         }
         return `${url}${str}`;
     }
-    get = (url: string, data?: QueryStringData, options: FetchOptions = {}) => {
+    get = (url: string, data?: QueryStringData, options: FetchOptions = {}): Promise<any> => {
         return this.send(this.queryUrl(url, data), undefined, {
             ...options,
             method: 'get',
         })
     }
-    post = (url: string, data?: any, options: FetchOptions = {}) => {
+    post = (url: string, data?: any, options: FetchOptions = {}): Promise<any> => {
         return this.send(url, data, {
             ...options,
             method: 'post',
