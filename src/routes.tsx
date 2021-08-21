@@ -1,7 +1,9 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import Layout from '@view'
 import Login from '@view/user/login'
-import Test from '@view/test'
+import Control from '@view/control'
+import Email from '@view/email'
+import Files from '@view/files'
 
 const routes = (isLogin: boolean) => {
   return [
@@ -12,7 +14,9 @@ const routes = (isLogin: boolean) => {
       path: '/',
       element: isLogin ? <Layout /> : <Navigate to="/login" />,
       children: [
-        { path: 'test', element: <Test /> },
+        { path: '/', element: <Control /> },
+        { path: 'email', element: <Email /> },
+        { path: 'files', element: <Files /> },
       ],
     },
     // {

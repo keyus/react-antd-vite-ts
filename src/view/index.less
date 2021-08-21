@@ -10,6 +10,7 @@ body,
     .main-side {
         background-color: #252f3e;
 
+
         .main-logo {
             height          : 64px;
             background-color: #1b2330;
@@ -17,6 +18,40 @@ body,
             display         : flex;
             align-items     : center;
             padding-left    : 10px;
+
+            .anticon {
+                margin-right: 10px;
+                font-size   : 24px;
+                color       : #61DAFB;
+            }
+        }
+
+        .main-menu {
+            background-color: transparent;
+            border-right    : none;
+            padding         : 0 10px;
+
+            li {
+                color      : rgba(255, 255, 255, 0.7);
+                font-weight: 500;
+
+                &.ant-menu-item-selected {
+                    color           : rgb(255, 255, 255);
+                    transition      : border-radius 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+                    pointer-events  : none;
+                    border-radius   : 6px;
+                    background-color: rgba(255, 255, 255, 0.1) !important;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                &.ant-menu-item:active,
+                &.ant-menu-submenu-title:active {
+                    background: transparent;
+                }
+            }
         }
     }
 
@@ -37,7 +72,7 @@ body,
                 .user {
                     display      : block;
                     padding      : 10px;
-                    border-radius: 15px;
+                    border-radius: 20px;
                     cursor       : pointer;
 
                     &:hover {

@@ -100,7 +100,6 @@ const Login = () => {
                 </Form.Item>
             </Form>
         </div>
-
     );
 };
 
