@@ -71,7 +71,7 @@ class Http implements Http {
         }
 
         return new Promise((resolve, reject) => {
-
+            let response:any;
             fetch(
                 this.parseUrl(url),
                 {
@@ -81,6 +81,7 @@ class Http implements Http {
                     ...props,
                 }
             ).then(res => {
+                response = res;
                 if (res.ok) {
                     const cType = res.headers.get('content-type')?.toLocaleLowerCase();
                     // stream response data
@@ -93,9 +94,11 @@ class Http implements Http {
                     throw new Error(res.statusText);
                 }
             }).then(res => {
+                // 如果是流数据，则把响应体 headers返回
                 if (res instanceof Blob) {
                     return resolve({
                         data: res,
+                        headers: response.headers,
                     })
                 }
 

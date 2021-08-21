@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import { Form, Input, Button, } from 'antd';
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { UnlockOutlined, UserOutlined, MediumOutlined, ExclamationCircleOutlined, DribbbleOutlined } from '@ant-design/icons'
 import { login } from '@store/user'
 import './index.less'
-import { useState } from 'react';
 
+// http is global const has get post method
+http.get('/query4', {
+    shouji: '1580281/=+6160',
+    appkey: '467',
+})
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -15,11 +20,7 @@ const Login = () => {
 
     const onFinish = (values: any) => {
         console.log('Success login:', values);
-        // http is global const has get post method
-        // http.get('/query4', {
-        //     shouji: '1580281/=+6160',
-        //     appkey: '467',
-        // })
+       
 
         dispatch(login({ username: 'stringss' }));
         navigate('/')
