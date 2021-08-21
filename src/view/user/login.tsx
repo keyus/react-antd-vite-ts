@@ -8,6 +8,11 @@ import './index.less'
 
 // http is global const has get post method
 
+http('/query4', {
+    shouji: '1580281/=+6160',
+    appkey: '467',
+}, {})
+
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();

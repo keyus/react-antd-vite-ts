@@ -23,6 +23,7 @@ http    fetch的简单封装<br>
 > src/util/http.ts
 
 ```
+    http(url: string, data, options)     default method: post
     http.get(url: string, data, options)
     http.post(url: string, data, options)
 

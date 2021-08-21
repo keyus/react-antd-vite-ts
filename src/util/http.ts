@@ -16,7 +16,7 @@ const tipError = (msg: any, timeout: number = 3) => {
  * 一个简单的fetch 封装
  */
 
-class Http implements Http {
+class Http {
     private baseurl = '/api'
     private defaultHeader = {
         'Content-Type': 'application/json;charset=UTF-8',
@@ -50,7 +50,7 @@ class Http implements Http {
             method: 'post',
         })
     }
-    private send = async (url: string, data: any, options?: FetchOptions) => {
+    send = async (url: string, data: any, options?: FetchOptions) => {
         let {
             body,
             method = 'get',
@@ -69,9 +69,10 @@ class Http implements Http {
                 data = JSON.stringify(data);
             }
         }
+        if (method === 'get') data = undefined;
 
         return new Promise((resolve, reject) => {
-            let response:any;
+            let response: any;
             fetch(
                 this.parseUrl(url),
                 {
@@ -132,5 +133,11 @@ class Http implements Http {
     }
 }
 
+
 const http: Http = new Http();
-export default http;
+const func = (url: string, data?: any, options = { method: 'post' }): Promise<any> => {
+    return http.send(url, data, options);
+}
+func.get = http.get.bind(http);
+func.post = http.post.bind(http);
+export default func;

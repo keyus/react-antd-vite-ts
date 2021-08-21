@@ -10,13 +10,15 @@ interface FetchOptions {
     [key: string]: any
 }
 
-interface Http {
-    get(url: string, data?: QueryStringData, options?: FetchOptions): Promise<any>
-    post(url: string, data?: QueryStringData, options?: FetchOptions): Promise<any>
+declare const util: Obj
+
+declare function http(url: string, data?: QueryStringData, option?: FetchOptions,): Promise<any>
+declare namespace http {
+    function get(url: string, data?: QueryStringData, option?: FetchOptions,): Promise<any>
+    function post(url: string, data?: QueryStringData, options?: FetchOptions): Promise<any>
 }
 
-declare const util: Obj
-declare const http: Http
+// declare const http: (url: string, data?: QueryStringData, option?: FetchOptions,) => Promise<any>
 declare var __REDUX_DEVTOOLS_EXTENSION__: () => any
 
 
