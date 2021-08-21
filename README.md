@@ -19,13 +19,13 @@ util    工具函数库<br>
 http    fetch的简单封装<br>
 > src/util/http.ts
 
-`
-    http.get(url: string, data, options)<br>
-    http.post(url: string, data, options)<br>
+```
+    http.get(url: string, data, options)
+    http.post(url: string, data, options)
 
     data : {}      fetch body data;  
     options: {}    from fetch options;  
-`
+```
 
 
 #### 命令
