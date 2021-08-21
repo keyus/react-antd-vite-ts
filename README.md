@@ -17,7 +17,8 @@ util    工具函数库<br>
 > src/util/index.ts<br>
 
 http    fetch的简单封装<br>
-> src/util/http.ts<br>
+> src/util/http.ts
+
 `
     http.get(url: string, data, options)<br>
     http.post(url: string, data, options)<br>
