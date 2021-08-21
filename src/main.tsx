@@ -6,6 +6,7 @@ import zhCN from 'antd/lib/locale/zh_CN';
 import store from '@store'
 import type { RootState } from '@store'
 import routes from './routes'
+import moment from 'moment-timezone'
 import '@style/base.less'
 
 /** 
@@ -18,6 +19,8 @@ function AppRoutes() {
   return useRoutes(routes(isLogin));
 }
 
+//亚州 上海时区
+moment.tz.setDefault('Asia/Shanghai');
 ReactDOM.render(
   <Provider store={store}>
     <ConfigProvider locale={zhCN}>
