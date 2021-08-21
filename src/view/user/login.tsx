@@ -7,10 +7,7 @@ import { login } from '@store/user'
 import './index.less'
 
 // http is global const has get post method
-http.get('/query4', {
-    shouji: '1580281/=+6160',
-    appkey: '467',
-})
+
 const Login = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -18,10 +15,13 @@ const Login = () => {
     const [error, setError] = useState('');
     const [visible, setVisible] = useState(true);
 
-    const onFinish = (values: any) => {
+    const onFinish = async (values: any) => {
         console.log('Success login:', values);
-       
 
+        // const res = await http.get('/query4', {
+        //     shouji: '1580281/=+6160',
+        //     appkey: '467',
+        // })
         dispatch(login({ username: 'stringss' }));
         navigate('/')
     };

@@ -14,7 +14,7 @@ export default (props = {}) => {
     const { pathname } = useLocation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const onLogout = useCallback((): void => {
+    const onLogout = useCallback(() => {
         dispatch({ type: 'logout' });
         navigate('/login')
     }, []);
