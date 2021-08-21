@@ -1,5 +1,8 @@
 # vite-react-template
-vite react template<br>
+
+### vite2 react模板
+
+vite 2.x 使用react 构建的中后端项目<br>
 
 react   > 17.x  <br> 
 antd    > 4.x<br>
