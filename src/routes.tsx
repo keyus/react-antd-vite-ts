@@ -1,6 +1,8 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import Layout from '@view'
 import Login from '@view/user/login'
+import Bind from '@view/user/bind'
+
 import Control from '@view/control'
 import Email from '@view/email'
 import Files from '@view/files'
@@ -9,6 +11,8 @@ const routes = (isLogin: boolean) => {
   return [
     // 公共路由
     { path: '/login', element: <Login /> },
+    { path: '/bind', element: <Bind /> },
+    
     // 需要登陆访问路由
     {
       path: '/',

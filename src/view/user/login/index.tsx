@@ -6,12 +6,6 @@ import { UnlockOutlined, UserOutlined, MediumOutlined, ExclamationCircleOutlined
 import { login } from '@store/user'
 import './index.less'
 
-// http is global const has get post method
-
-http('/query4', {
-    shouji: '1580281/=+6160',
-    appkey: '467',
-}, {})
 
 const Login = () => {
     const navigate = useNavigate();
@@ -23,6 +17,7 @@ const Login = () => {
     const onFinish = async (values: any) => {
         console.log('Success login:', values);
 
+        // http is global const has get post method
         // const res = await http.get('/query4', {
         //     shouji: '1580281/=+6160',
         //     appkey: '467',
