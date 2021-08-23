@@ -68,6 +68,62 @@ body,
             }
 
             .right {
+                display    : flex;
+                align-items: center;
+
+                .user-status {
+                    border         : 1px solid #dadce0;
+                    letter-spacing : .25px;
+                    font-size      : 14px;
+                    padding        : 0 16px;
+                    border-radius  : 18px;
+                    display        : flex;
+                    align-items    : center;
+                    justify-content: center;
+                    height         : 36px;
+
+                    .icon {
+                        background-color: #1e8e3e;
+                        border-radius   : 50%;
+                        height          : 12px;
+                        width           : 12px;
+                        margin-right    : 8px;
+                    }
+
+                    .anticon {
+                        color      : #5f6368;
+                        margin-left: 4px;
+                        font-size  : 12px;
+                    }
+                }
+
+                .user-tools {
+                    color      : #5f6368;
+                    font-weight: 700;
+                    margin     : 0 12px;
+
+                    .anticon {
+                        border-radius  : 50%;
+                        cursor         : pointer;
+                        height         : 32px;
+                        padding        : 8px;
+                        width          : 32px;
+                        font-size      : 32px;
+                        font-weight    : 700;
+                        display        : flex;
+                        justify-content: center;
+                        align-items    : center;
+
+                        &:hover {
+                            background-color: rgba(60, 64, 67, 0.078);
+                        }
+
+                        &:last-of-type {
+                            margin-right: 8px;
+                        }
+
+                    }
+                }
 
                 .user {
                     display      : block;

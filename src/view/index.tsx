@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom'
 import { Button, Layout, Image, Avatar, Dropdown, Menu } from 'antd'
-import { LoginOutlined, MenuFoldOutlined, UserOutlined, MediumOutlined, PieChartOutlined, DesktopOutlined, ContainerOutlined, MessageOutlined } from '@ant-design/icons'
+import { LoginOutlined, MenuFoldOutlined, UserOutlined, MediumOutlined, PieChartOutlined, DesktopOutlined, ContainerOutlined, MessageOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
 import './index.less'
 
 
@@ -56,6 +56,14 @@ export default (props = {}) => {
                 <Header className='main-header'>
                     <div className='left'><MenuFoldOutlined /></div>
                     <div className='right'>
+                        <div className='user-status'>
+                            <i className='icon' />
+                            在线
+                            <CaretDownOutlined />
+                        </div>
+                        <div className='user-tools'>
+                            <SettingOutlined />
+                        </div>
                         <Dropdown overlay={menu} trigger={['click']}>
                             <span className='user'>
                                 <label className='name'>Jsisaj</label>
