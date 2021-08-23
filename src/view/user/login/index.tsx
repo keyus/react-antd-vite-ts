@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Form, Input, Button, } from 'antd';
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { UnlockOutlined, UserOutlined, MediumOutlined, ExclamationCircleOutlined, DribbbleOutlined } from '@ant-design/icons'
+import { UnlockOutlined, UserOutlined, ExclamationCircleOutlined, DribbbleOutlined } from '@ant-design/icons'
 import { login } from '@store/user'
 import './index.less'
 
@@ -34,7 +34,7 @@ const Login = () => {
         <div className='login-block'>
             <div className='login-logo'>
                 <h1>
-                    <MediumOutlined />
+                    {config.logo}
                 </h1>
             </div>
             <Form

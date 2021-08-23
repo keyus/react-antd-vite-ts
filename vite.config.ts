@@ -2,14 +2,18 @@ import { defineConfig, loadEnv } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import styleImport from 'vite-plugin-style-import'
 import inject from '@rollup/plugin-inject'
+// import svgr from '@svgr/rollup'
+const svgr = require('@svgr/rollup').default
+
 import { injectHtml } from 'vite-plugin-html'
+
 // import legacy from '@vitejs/plugin-legacy'
 // const { getThemeVariables } = require('antd/dist/theme');
 
 const path = require('path');
 const envDir = '.env';
 
-export default defineConfig(({ mode, ...config }) => {
+export default defineConfig(({ mode }): any => {
   return {
     envDir,
     css: {
@@ -36,7 +40,10 @@ export default defineConfig(({ mode, ...config }) => {
     },
 
     plugins: [
+
       reactRefresh(),
+      svgr(),
+
       styleImport({
         libs: [{
           libraryName: 'antd',
@@ -50,12 +57,12 @@ export default defineConfig(({ mode, ...config }) => {
         React: ['react', 'default'],
         util: ['@util', 'default'],
         http: ['@util/http', 'default'],
+        config: ['@config', 'default'],
         ReactDOM: ['react-dom', 'default'],
       }),
       injectHtml({
         injectData: loadEnv(mode, envDir),
       }),
-
       //ie 兼容
       // legacy({
       //   targets: ['ie >= 11'],

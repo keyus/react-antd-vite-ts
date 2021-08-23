@@ -11,6 +11,7 @@ interface FetchOptions {
 }
 
 declare const util: Obj
+declare const config: Obj
 
 declare function http(url: string, data?: QueryStringData, option?: FetchOptions,): Promise<any>
 declare namespace http {

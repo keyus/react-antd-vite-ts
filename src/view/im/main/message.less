@@ -1,0 +1,94 @@
+@left-white: "/src/assets/img/left-white.svg";
+@right-blue: "/src/assets/img/right-blue.svg";
+
+.no-more {
+    color     : #a5b5c1;
+    padding   : 10px 10px;
+    font-size : 12px;
+    text-align: center;
+}
+
+.im-main-message {
+    background-color: #fff;
+    overflow-y: auto;
+
+    .it-wrapper {
+        margin: 20px 0;
+
+        &.postion-right {
+            .it-layout {
+                flex-direction: row-reverse;
+
+                .it-content {
+                    margin-right: 15px;
+                    margin-left : 0;
+
+                    .it-date {
+                        flex-direction: row-reverse;
+                    }
+
+                    .it-text {
+                        background-color: #5cadff;
+                        color           : #fff;
+
+                        &::before {
+                            left            : auto;
+                            right           : -15px;
+                            background-image: url(@right-blue);
+                        }
+                    }
+                }
+            }
+        }
+
+        .it-layout {
+            display: flex;
+
+            svg {
+                width : 56px;
+                height: 56px;
+            }
+
+            .it-content {
+                color        : #606266;
+                font-size    : 14px;
+                margin-left  : 15px;
+                border-radius: 5px;
+
+                .it-date {
+                    display    : flex;
+                    color      : #a5b5c1;
+                    padding-top: 3px;
+                    font-size  : 12px;
+                }
+
+                .it-text {
+                    background-color: #fff;
+                    box-shadow      : 0 2px 10px rgb(0 0 0 / 10%);
+                    word-wrap       : break-word;
+                    word-break      : break-all;
+                    padding         : 10px;
+                    max-width       : 350px;
+                    position        : relative;
+                    border-radius   : 5px;
+
+
+                    &::before {
+                        left             : -15px;
+                        position         : absolute;
+                        z-index          : 2;
+                        top              : 6px;
+                        width            : 28px;
+                        height           : 28px;
+                        content          : '';
+                        display          : block;
+                        background-image : url(@left-white);
+                        background-size  : 100%;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -3,7 +3,7 @@ import { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom'
 import { Button, Layout, Image, Avatar, Dropdown, Menu } from 'antd'
-import { LoginOutlined, MenuFoldOutlined, UserOutlined, MediumOutlined, PieChartOutlined, DesktopOutlined, ContainerOutlined } from '@ant-design/icons'
+import { LoginOutlined, MenuFoldOutlined, UserOutlined, MediumOutlined, PieChartOutlined, DesktopOutlined, ContainerOutlined, MessageOutlined } from '@ant-design/icons'
 import './index.less'
 
 
@@ -38,7 +38,10 @@ export default (props = {}) => {
                     className='main-menu'
                     mode="inline"
                 >
-                    <Menu.Item key="/" icon={<PieChartOutlined />}>
+                    <Menu.Item key="/" icon={<MessageOutlined />}>
+                        聊天
+                    </Menu.Item>
+                    <Menu.Item key="/control" icon={<PieChartOutlined />}>
                         控制台
                     </Menu.Item>
                     <Menu.Item key="/email" icon={<DesktopOutlined />}>
