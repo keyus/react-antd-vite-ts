@@ -8,7 +8,7 @@ export default () => {
     return (
         <div className='im-side'>
             <h2 className='it-top'>
-                <IconMessage width={24} />
+                <IconMessage width={24} height={24} />
                 聊天
                 <div className='it-top-right'>
                 </div>

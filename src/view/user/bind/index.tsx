@@ -14,7 +14,7 @@ export default () => {
     const [pass, setPass] = useState<boolean>(false)
 
     return (
-        <Layout className='main-layout'>
+        <Layout className='bind-layout'>
             <Sider width={240} className='main-side'>
                 <h1 className='main-logo'><MediumOutlined />REACT VITE </h1>
                 <Menu

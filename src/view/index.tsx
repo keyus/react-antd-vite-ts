@@ -1,9 +1,9 @@
 
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom'
 import { Button, Layout, Image, Avatar, Dropdown, Menu } from 'antd'
-import { LoginOutlined, MenuFoldOutlined, UserOutlined, MediumOutlined, PieChartOutlined, DesktopOutlined, ContainerOutlined, MessageOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
+import { LoginOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, MediumOutlined, PieChartOutlined, DesktopOutlined, ContainerOutlined, MessageOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
 import './index.less'
 
 
@@ -14,12 +14,17 @@ export default (props = {}) => {
     const { pathname } = useLocation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const [collapsed, setCollapsed] = useState(true);
     const onLogout = useCallback(() => {
         dispatch({ type: 'logout' });
         navigate('/login')
     }, []);
     const onClickMenus = useCallback(({ key }) => {
         navigate(key)
+    }, [])
+
+    const onToggleSide = useCallback(() => {
+        setCollapsed(val=>!val)
     }, [])
 
     const menu = (
@@ -30,8 +35,11 @@ export default (props = {}) => {
     );
     return (
         <Layout className='main-layout'>
-            <Sider width={240} className='main-side'>
-                <h1 className='main-logo'><MediumOutlined />REACT VITE </h1>
+            <Sider width={240} className='main-side' collapsed={collapsed}>
+                <h1 className={`main-logo ${collapsed ? 'collapsed' : ''}`}>
+                    <MediumOutlined />
+                    <span className='app-name'>REACT VITE</span>
+                </h1>
                 <Menu
                     defaultSelectedKeys={[pathname]}
                     onClick={onClickMenus}
@@ -54,7 +62,17 @@ export default (props = {}) => {
             </Sider>
             <Layout className='main-body'>
                 <Header className='main-header'>
-                    <div className='left'><MenuFoldOutlined /></div>
+                    <div className='left'>
+                        <span className='toggle-side' onClick={onToggleSide}>
+                            {
+                                collapsed ?
+                                    <MenuUnfoldOutlined /> :
+                                    <MenuFoldOutlined />
+                            }
+                        </span>
+
+
+                    </div>
                     <div className='right'>
                         <div className='user-status'>
                             <i className='icon' />
