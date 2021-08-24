@@ -15,7 +15,7 @@ export default (props = {}) => {
     const { pathname } = useLocation();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [collapsed, setCollapsed] = useState(true);
+    const [collapsed, setCollapsed] = useState(false);
     const onLogout = useCallback(() => {
         dispatch({ type: 'logout' });
         navigate('/login')
