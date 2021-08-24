@@ -1,16 +1,21 @@
 
 import { useState } from 'react'
-import { Layout, Avatar, Menu } from 'antd'
+import { useNavigate } from 'react-router-dom'
+import { Layout, Avatar, Menu, Tooltip } from 'antd'
 import { GoogleOutlined, MediumOutlined, } from '@ant-design/icons'
+import IconUserAvatar from '@img/user-avatar.svg';
+import { ReactComponent as IconReturn } from '@img/return.svg'
+
 import Bind from './bind'
 import Success from './success'
+
 import './index.less'
 
 
 const { Header, Sider, Content } = Layout;
 
 export default () => {
-
+    const navgite = useNavigate();
     const [pass, setPass] = useState<boolean>(false)
 
     return (
@@ -31,10 +36,16 @@ export default () => {
                 <Header className='main-header'>
                     <div className='left' />
                     <div className='right'>
-                        <span className='user'>
-                            <label className='name'>Jsisaj</label>
-                            <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                        </span>
+                        <Tooltip title='返回登录' placement='left'>
+                            <span className='return' onClick={() => navgite('/login')}>
+                                <IconReturn />
+                            </span>
+                        </Tooltip>
+                        <Tooltip title='用户名：Jsisaj' placement='left'>
+                            <span className='user'>
+                                <Avatar src={IconUserAvatar} />
+                            </span>
+                        </Tooltip>
                     </div>
                 </Header>
                 <Content className='main-content'>
