@@ -12,9 +12,9 @@ export default () => {
         <div className='bind-finish'>
             <CheckCircleFilled className='icon-success' />
             <h2>动态口令设置成功</h2>
-            <p>以后登录{import.meta.env.VITE_APP_NAME} 都需要输入Google动态口令哦，手机千万不要丢失！</p>
+            <p>以后登录{config.appName} 都需要输入Google动态口令哦，手机千万不要丢失！</p>
             <Button type='primary' onClick={goHome}>
-                开始使用{import.meta.env.VITE_APP_NAME}
+                开始使用{config.appName}
             </Button>
         </div>
     )

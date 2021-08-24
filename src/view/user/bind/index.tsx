@@ -16,7 +16,7 @@ export default () => {
     return (
         <Layout className='bind-layout'>
             <Sider width={240} className='main-side'>
-                <h1 className='main-logo'><MediumOutlined />REACT VITE </h1>
+                <h1 className='main-logo'><MediumOutlined />{config.appName}</h1>
                 <Menu
                     defaultSelectedKeys={['/bind']}
                     className='main-menu'

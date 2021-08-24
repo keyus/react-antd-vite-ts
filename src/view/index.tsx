@@ -1,9 +1,10 @@
 
 import { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom'
-import { Button, Layout, Image, Avatar, Dropdown, Menu } from 'antd'
+import { Outlet, useNavigate, useLocation } from 'react-router-dom'
+import { Layout, Avatar, Dropdown, Menu } from 'antd'
 import { LoginOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, MediumOutlined, PieChartOutlined, DesktopOutlined, ContainerOutlined, MessageOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
+import IconUserAvatar from '@img/user-avatar.svg';
 import './index.less'
 
 
@@ -24,7 +25,7 @@ export default (props = {}) => {
     }, [])
 
     const onToggleSide = useCallback(() => {
-        setCollapsed(val=>!val)
+        setCollapsed(val => !val)
     }, [])
 
     const menu = (
@@ -38,7 +39,7 @@ export default (props = {}) => {
             <Sider width={240} className='main-side' collapsed={collapsed}>
                 <h1 className={`main-logo ${collapsed ? 'collapsed' : ''}`}>
                     <MediumOutlined />
-                    <span className='app-name'>REACT VITE</span>
+                    <span className='app-name'>{config.appName}</span>
                 </h1>
                 <Menu
                     defaultSelectedKeys={[pathname]}
@@ -63,15 +64,19 @@ export default (props = {}) => {
             <Layout className='main-body'>
                 <Header className='main-header'>
                     <div className='left'>
-                        <span className='toggle-side' onClick={onToggleSide}>
+                        <div className='toggle-side' onClick={onToggleSide}>
                             {
                                 collapsed ?
                                     <MenuUnfoldOutlined /> :
                                     <MenuFoldOutlined />
                             }
-                        </span>
+                        </div>
 
-
+                        <div className='im-info'>
+                            <span>今日会话：<em>0</em> 个</span>
+                            <span>客户评分：<em className='red'>2.7</em>分</span>
+                            <span>状态：正在接单</span>
+                        </div>
                     </div>
                     <div className='right'>
                         <div className='user-status'>
@@ -85,7 +90,7 @@ export default (props = {}) => {
                         <Dropdown overlay={menu} trigger={['click']}>
                             <span className='user'>
                                 <label className='name'>Jsisaj</label>
-                                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                                <Avatar src={IconUserAvatar} />
                             </span>
                         </Dropdown>
                     </div>
