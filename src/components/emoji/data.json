@@ -1,0 +1,286 @@
+{
+    "emojis": {
+        "grinning": {
+            "a": "Grinning Face",
+            "b": "1F600"
+        },
+        "sweat_smile": {
+            "a": "Smiling Face with Open Mouth and Cold Sweat",
+            "b": "1F605"
+        },
+     
+        "rolling_on_the_floor_laughing": {
+            "a": "Rolling on the Floor Laughing",
+            "b": "1F923"
+        },
+       
+        "joy": {
+            "a": "Face with Tears of Joy",
+            "b": "1F602"
+        },
+        "slightly_smiling_face": {
+            "a": "Slightly Smiling Face",
+            "b": "1F642"
+        },
+        "upside_down_face": {
+            "a": "Upside-Down Face",
+            "b": "1F643"
+        },
+        "wink": {
+            "a": "Winking Face",
+            "b": "1F609"
+        },
+        "blush": {
+            "a": "Smiling Face with Smiling Eyes",
+            "b": "1F60A"
+        },
+        "innocent": {
+            "a": "Smiling Face with Halo",
+            "b": "1F607"
+        },
+        "ok_hand": {
+            "a": "Ok Hand Sign",
+            "b": "1F44C"
+        },
+        "heart_eyes": {
+            "a": "Smiling Face with Heart-Shaped Eyes",
+            "b": "1F60D"
+        },
+        "kissing_heart": {
+            "a": "Face Throwing a Kiss",
+            "b": "1F618"
+        },
+        "kissing": {
+            "a": "Kissing Face",
+            "b": "1F617"
+        },
+        "+1": {
+            "a": "Thumbs Up Sign",
+            "b": "1F44D"
+        },
+        "kissing_closed_eyes": {
+            "a": "Kissing Face with Closed Eyes",
+            "b": "1F61A"
+        },
+        "-1": {
+            "a": "Thumbs Down Sign",
+            "b": "1F44E"
+        },
+        "fist": {
+            "a": "Raised Fist",
+            "b": "270A"
+        },
+        "kissing_smiling_eyes": {
+            "a": "Kissing Face with Smiling Eyes",
+            "b": "1F619"
+        },
+        "facepunch": {
+            "a": "Fisted Hand Sign",
+            "b": "1F44A"
+        },
+        "yum": {
+            "a": "Face Savouring Delicious Food",
+            "b": "1F60B"
+        },
+        "stuck_out_tongue": {
+            "a": "Face with Stuck-out Tongue",
+            "b": "1F61B"
+        },
+        "stuck_out_tongue_winking_eye": {
+            "a": "Face with Stuck-out Tongue and Winking Eye",
+            "b": "1F61C"
+        },
+        "right-facing_fist": {
+            "a": "Right-Facing Fist",
+            "b": "1F91C"
+        },
+        "clap": {
+            "a": "Clapping Hands Sign",
+            "b": "1F44F"
+        },
+        "zany_face": {
+            "a": "Grinning Face with One Large and One Small Eye",
+            "b": "1F92A"
+        },
+        "stuck_out_tongue_closed_eyes": {
+            "a": "Face with Stuck-out Tongue and Tightly-Closed Eyes",
+            "b": "1F61D"
+        },
+        "money_mouth_face": {
+            "a": "Money-Mouth Face",
+            "b": "1F911"
+        },
+        "hugging_face": {
+            "a": "Hugging Face",
+            "b": "1F917"
+        },
+        "handshake": {
+            "a": "Handshake",
+            "b": "1F91D"
+        },
+        "shushing_face": {
+            "a": "Face with Finger Covering Closed Lips",
+            "b": "1F92B"
+        },
+        "pray": {
+            "a": "Person with Folded Hands",
+            "b": "1F64F"
+        },
+        "thinking_face": {
+            "a": "Thinking Face",
+            "b": "1F914"
+        },
+        "face_with_raised_eyebrow": {
+            "a": "Face with One Eyebrow Raised",
+            "b": "1F928"
+        },
+        "smirk": {
+            "a": "Smirking Face",
+            "b": "1F60F"
+        },
+        "unamused": {
+            "a": "Unamused Face",
+            "b": "1F612"
+        },
+        "face_with_rolling_eyes": {
+            "a": "Face with Rolling Eyes",
+            "b": "1F644"
+        },
+        "grimacing": {
+            "a": "Grimacing Face",
+            "b": "1F62C"
+        },
+        "lying_face": {
+            "a": "Lying Face",
+            "b": "1F925"
+        },
+        "pensive": {
+            "a": "Pensive Face",
+            "b": "1F614"
+        },
+        "sleepy": {
+            "a": "Sleepy Face",
+            "b": "1F62A"
+        },
+        "sleeping": {
+            "a": "Sleeping Face",
+            "b": "1F634"
+        },
+        "mask": {
+            "a": "Face with Medical Mask",
+            "b": "1F637"
+        },
+        "face_with_thermometer": {
+            "a": "Face with Thermometer",
+            "b": "1F912"
+        },
+        "face_with_head_bandage": {
+            "a": "Face with Head-Bandage",
+            "b": "1F915"
+        },
+        "sneezing_face": {
+            "a": "Sneezing Face",
+            "b": "1F927"
+        },
+        "hot_face": {
+            "a": "Overheated Face",
+            "b": "1F975"
+        },
+        "sunglasses": {
+            "a": "Smiling Face with Sunglasses",
+            "b": "1F60E"
+        },
+        "flushed": {
+            "a": "Flushed Face",
+            "b": "1F633"
+        },
+        "pleading_face": {
+            "a": "Face with Pleading Eyes",
+            "b": "1F97A"
+        },
+        "frowning": {
+            "a": "Frowning Face with Open Mouth",
+            "b": "1F626"
+        },
+        "anguished": {
+            "a": "Anguished Face",
+            "b": "1F627"
+        },
+        "fearful": {
+            "a": "Fearful Face",
+            "b": "1F628"
+        },
+        "cold_sweat": {
+            "a": "Face with Open Mouth and Cold Sweat",
+            "b": "1F630"
+        },
+        "cry": {
+            "a": "Crying Face",
+            "b": "1F622"
+        },
+        "sob": {
+            "a": "Loudly Crying Face",
+            "b": "1F62D"
+        },
+        "scream": {
+            "a": "Face Screaming in Fear",
+            "b": "1F631"
+        },
+        "sweat": {
+            "a": "Face with Cold Sweat",
+            "b": "1F613"
+        },
+        "weary": {
+            "a": "Weary Face",
+            "b": "1F629"
+        },
+        "tired_face": {
+            "a": "Tired Face",
+            "b": "1F62B"
+        },
+        "yawning_face": {
+            "a": "Yawning Face",
+            "b": "1F971"
+        },
+        "triumph": {
+            "a": "Face with Look of Triumph",
+            "b": "1F624"
+        },
+        "rage": {
+            "a": "Pouting Face",
+            "b": "1F621"
+        },
+        "angry": {
+            "a": "Angry Face",
+            "b": "1F620"
+        },
+        "smiling_imp": {
+            "a": "Smiling Face with Horns",
+            "b": "1F608"
+        },
+        "imp": {
+            "a": "Imp",
+            "b": "1F47F"
+        },
+        "see_no_evil": {
+            "a": "See-No-Evil Monkey",
+            "b": "1F648"
+        },
+        "hear_no_evil": {
+            "a": "Hear-No-Evil Monkey",
+            "b": "1F649"
+        },
+        "speak_no_evil": {
+            "a": "Speak-No-Evil Monkey",
+            "b": "1F64A"
+        },
+        "two_hearts": {
+            "a": "Two Hearts",
+            "b": "1F495"
+        },
+        "broken_heart": {
+            "a": "Broken Heart",
+            "b": "1F494"
+        }
+    }
+}

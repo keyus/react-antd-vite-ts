@@ -1,6 +1,8 @@
 
 import { useCallback, useRef } from 'react'
 import { Mentions, Tooltip } from 'antd'
+import EmojiPicker from '@com/emoji'
+
 
 import { ReactComponent as IconFace } from '@img/face.svg'
 import { ReactComponent as IconPicture } from '@img/picture.svg'
@@ -35,8 +37,9 @@ export default () => {
 
     return (
         <div className='im-main-footer'>
+            {/* <NimblePicker native data={data} />  */}
             <div className='it-top'>
-                <span className='icon-tool'><IconFace /></span>
+                <EmojiPicker><span className='icon-tool'><IconFace /></span></EmojiPicker>
                 <span className='icon-tool'><IconPicture /></span>
                 <span className='icon-tool'><IconFile /></span>
                 <span className='icon-tool'><IconVideo /></span>

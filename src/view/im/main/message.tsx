@@ -2,7 +2,7 @@
 import { ReactComponent as Avatar1 } from '@img/avatar-1.svg'
 import { ReactComponent as Avatar2 } from '@img/avatar-2.svg'
 import './message.less'
-
+ 
 export default () => {
     return (
         <div className='im-main-message'>
