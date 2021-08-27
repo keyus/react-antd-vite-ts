@@ -1,286 +1,284 @@
 {
     "emojis": {
         "grinning": {
-            "a": "Grinning Face",
-            "b": "1F600"
+            "code": "1F600",
+            "value": "😀"
         },
         "sweat_smile": {
-            "a": "Smiling Face with Open Mouth and Cold Sweat",
-            "b": "1F605"
+            "code": "1F605",
+            "value": "😅"
         },
-     
         "rolling_on_the_floor_laughing": {
-            "a": "Rolling on the Floor Laughing",
-            "b": "1F923"
+            "code": "1F923",
+            "value": "🤣"
         },
-       
         "joy": {
-            "a": "Face with Tears of Joy",
-            "b": "1F602"
+            "code": "1F602",
+            "value": "😂"
         },
         "slightly_smiling_face": {
-            "a": "Slightly Smiling Face",
-            "b": "1F642"
+            "code": "1F642",
+            "value": "🙂"
         },
         "upside_down_face": {
-            "a": "Upside-Down Face",
-            "b": "1F643"
+            "code": "1F643",
+            "value": "🙃"
         },
         "wink": {
-            "a": "Winking Face",
-            "b": "1F609"
+            "code": "1F609",
+            "value": "😉"
         },
         "blush": {
-            "a": "Smiling Face with Smiling Eyes",
-            "b": "1F60A"
+            "code": "1F60A",
+            "value": "😊"
         },
         "innocent": {
-            "a": "Smiling Face with Halo",
-            "b": "1F607"
+            "code": "1F607",
+            "value": "😇"
         },
         "ok_hand": {
-            "a": "Ok Hand Sign",
-            "b": "1F44C"
+            "code": "1F44C",
+            "value": "👌"
         },
         "heart_eyes": {
-            "a": "Smiling Face with Heart-Shaped Eyes",
-            "b": "1F60D"
+            "code": "1F60D",
+            "value": "😍"
         },
         "kissing_heart": {
-            "a": "Face Throwing a Kiss",
-            "b": "1F618"
+            "code": "1F618",
+            "value": "😘"
         },
         "kissing": {
-            "a": "Kissing Face",
-            "b": "1F617"
+            "code": "1F617",
+            "value": "😗"
         },
         "+1": {
-            "a": "Thumbs Up Sign",
-            "b": "1F44D"
+            "code": "1F44D",
+            "value": "👍"
         },
         "kissing_closed_eyes": {
-            "a": "Kissing Face with Closed Eyes",
-            "b": "1F61A"
+            "code": "1F61A",
+            "value": "😚"
         },
         "-1": {
-            "a": "Thumbs Down Sign",
-            "b": "1F44E"
+            "code": "1F44E",
+            "value": "👎"
         },
         "fist": {
-            "a": "Raised Fist",
-            "b": "270A"
+            "code": "270A",
+            "value": "✊"
         },
         "kissing_smiling_eyes": {
-            "a": "Kissing Face with Smiling Eyes",
-            "b": "1F619"
+            "code": "1F619",
+            "value": "😙"
         },
         "facepunch": {
-            "a": "Fisted Hand Sign",
-            "b": "1F44A"
+            "code": "1F44A",
+            "value": "👊"
         },
         "yum": {
-            "a": "Face Savouring Delicious Food",
-            "b": "1F60B"
+            "code": "1F60B",
+            "value": "😋"
         },
         "stuck_out_tongue": {
-            "a": "Face with Stuck-out Tongue",
-            "b": "1F61B"
+            "code": "1F61B",
+            "value": "😛"
         },
         "stuck_out_tongue_winking_eye": {
-            "a": "Face with Stuck-out Tongue and Winking Eye",
-            "b": "1F61C"
+            "code": "1F61C",
+            "value": "😜"
         },
         "right-facing_fist": {
-            "a": "Right-Facing Fist",
-            "b": "1F91C"
+            "code": "1F91C",
+            "value": "🤜"
         },
         "clap": {
-            "a": "Clapping Hands Sign",
-            "b": "1F44F"
+            "code": "1F44F",
+            "value": "👏"
         },
         "zany_face": {
-            "a": "Grinning Face with One Large and One Small Eye",
-            "b": "1F92A"
+            "code": "1F92A",
+            "value": "🤪"
         },
         "stuck_out_tongue_closed_eyes": {
-            "a": "Face with Stuck-out Tongue and Tightly-Closed Eyes",
-            "b": "1F61D"
+            "code": "1F61D",
+            "value": "😝"
         },
         "money_mouth_face": {
-            "a": "Money-Mouth Face",
-            "b": "1F911"
+            "code": "1F911",
+            "value": "🤑"
         },
         "hugging_face": {
-            "a": "Hugging Face",
-            "b": "1F917"
+            "code": "1F917",
+            "value": "🤗"
         },
         "handshake": {
-            "a": "Handshake",
-            "b": "1F91D"
+            "code": "1F91D",
+            "value": "🤝"
         },
         "shushing_face": {
-            "a": "Face with Finger Covering Closed Lips",
-            "b": "1F92B"
+            "code": "1F92B",
+            "value": "🤫"
         },
         "pray": {
-            "a": "Person with Folded Hands",
-            "b": "1F64F"
+            "code": "1F64F",
+            "value": "🙏"
         },
         "thinking_face": {
-            "a": "Thinking Face",
-            "b": "1F914"
+            "code": "1F914",
+            "value": "🤔"
         },
         "face_with_raised_eyebrow": {
-            "a": "Face with One Eyebrow Raised",
-            "b": "1F928"
+            "code": "1F928",
+            "value": "🤨"
         },
         "smirk": {
-            "a": "Smirking Face",
-            "b": "1F60F"
+            "code": "1F60F",
+            "value": "😏"
         },
         "unamused": {
-            "a": "Unamused Face",
-            "b": "1F612"
+            "code": "1F612",
+            "value": "😒"
         },
         "face_with_rolling_eyes": {
-            "a": "Face with Rolling Eyes",
-            "b": "1F644"
+            "code": "1F644",
+            "value": "🙄"
         },
         "grimacing": {
-            "a": "Grimacing Face",
-            "b": "1F62C"
+            "code": "1F62C",
+            "value": "😬"
         },
         "lying_face": {
-            "a": "Lying Face",
-            "b": "1F925"
+            "code": "1F925",
+            "value": "🤥"
         },
         "pensive": {
-            "a": "Pensive Face",
-            "b": "1F614"
+            "code": "1F614",
+            "value": "😔"
         },
         "sleepy": {
-            "a": "Sleepy Face",
-            "b": "1F62A"
+            "code": "1F62A",
+            "value": "😪"
         },
         "sleeping": {
-            "a": "Sleeping Face",
-            "b": "1F634"
+            "code": "1F634",
+            "value": "😴"
         },
         "mask": {
-            "a": "Face with Medical Mask",
-            "b": "1F637"
+            "code": "1F637",
+            "value": "😷"
         },
         "face_with_thermometer": {
-            "a": "Face with Thermometer",
-            "b": "1F912"
+            "code": "1F912",
+            "value": "🤒"
         },
         "face_with_head_bandage": {
-            "a": "Face with Head-Bandage",
-            "b": "1F915"
+            "code": "1F915",
+            "value": "🤕"
         },
         "sneezing_face": {
-            "a": "Sneezing Face",
-            "b": "1F927"
+            "code": "1F927",
+            "value": "🤧"
         },
         "hot_face": {
-            "a": "Overheated Face",
-            "b": "1F975"
+            "code": "1F975",
+            "value": "🥵"
         },
         "sunglasses": {
-            "a": "Smiling Face with Sunglasses",
-            "b": "1F60E"
+            "code": "1F60E",
+            "value": "😎"
         },
         "flushed": {
-            "a": "Flushed Face",
-            "b": "1F633"
+            "code": "1F633",
+            "value": "😳"
         },
         "pleading_face": {
-            "a": "Face with Pleading Eyes",
-            "b": "1F97A"
+            "code": "1F97A",
+            "value": "🥺"
         },
         "frowning": {
-            "a": "Frowning Face with Open Mouth",
-            "b": "1F626"
+            "code": "1F626",
+            "value": "😦"
         },
         "anguished": {
-            "a": "Anguished Face",
-            "b": "1F627"
+            "code": "1F627",
+            "value": "😧"
         },
         "fearful": {
-            "a": "Fearful Face",
-            "b": "1F628"
+            "code": "1F628",
+            "value": "😨"
         },
         "cold_sweat": {
-            "a": "Face with Open Mouth and Cold Sweat",
-            "b": "1F630"
+            "code": "1F630",
+            "value": "😰"
         },
         "cry": {
-            "a": "Crying Face",
-            "b": "1F622"
+            "code": "1F622",
+            "value": "😢"
         },
         "sob": {
-            "a": "Loudly Crying Face",
-            "b": "1F62D"
+            "code": "1F62D",
+            "value": "😭"
         },
         "scream": {
-            "a": "Face Screaming in Fear",
-            "b": "1F631"
+            "code": "1F631",
+            "value": "😱"
         },
         "sweat": {
-            "a": "Face with Cold Sweat",
-            "b": "1F613"
+            "code": "1F613",
+            "value": "😓"
         },
         "weary": {
-            "a": "Weary Face",
-            "b": "1F629"
+            "code": "1F629",
+            "value": "😩"
         },
         "tired_face": {
-            "a": "Tired Face",
-            "b": "1F62B"
+            "code": "1F62B",
+            "value": "😫"
         },
         "yawning_face": {
-            "a": "Yawning Face",
-            "b": "1F971"
+            "code": "1F971",
+            "value": "🥱"
         },
         "triumph": {
-            "a": "Face with Look of Triumph",
-            "b": "1F624"
+            "code": "1F624",
+            "value": "😤"
         },
         "rage": {
-            "a": "Pouting Face",
-            "b": "1F621"
+            "code": "1F621",
+            "value": "😡"
         },
         "angry": {
-            "a": "Angry Face",
-            "b": "1F620"
+            "code": "1F620",
+            "value": "😠"
         },
         "smiling_imp": {
-            "a": "Smiling Face with Horns",
-            "b": "1F608"
+            "code": "1F608",
+            "value": "😈"
         },
         "imp": {
-            "a": "Imp",
-            "b": "1F47F"
+            "code": "1F47F",
+            "value": "👿"
         },
         "see_no_evil": {
-            "a": "See-No-Evil Monkey",
-            "b": "1F648"
+            "code": "1F648",
+            "value": "🙈"
         },
         "hear_no_evil": {
-            "a": "Hear-No-Evil Monkey",
-            "b": "1F649"
+            "code": "1F649",
+            "value": "🙉"
         },
         "speak_no_evil": {
-            "a": "Speak-No-Evil Monkey",
-            "b": "1F64A"
+            "code": "1F64A",
+            "value": "🙊"
         },
         "two_hearts": {
-            "a": "Two Hearts",
-            "b": "1F495"
+            "code": "1F495",
+            "value": "💕"
         },
         "broken_heart": {
-            "a": "Broken Heart",
-            "b": "1F494"
+            "code": "1F494",
+            "value": "💔"
         }
     }
 }

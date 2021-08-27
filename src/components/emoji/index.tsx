@@ -1,46 +1,53 @@
 
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Popover, Tooltip } from 'antd';
 import data from './data.json'
 import './index.less'
 
+
+
 interface Props {
     children: React.ReactElement
-    visible?: boolean
+    onSelect?: <T>(key: T) => any
 }
 
-const emojiData = Object.entries(data.emojis);
-
-const Emoji = () => {
-    return (
-        <ul className='emoji-wrapper'>
-            {
-                emojiData.map((it, index) => {
-                    return (
-                        <li
-                            className='emoji-native'
-                            key={index}
-                        >
-                            {/* <Tooltip title={it[0]}> */}
-                                <span dangerouslySetInnerHTML={{ __html: `&#x${it[1]['b']}` }} />
-                            {/* </Tooltip> */}
-                        </li>
-                    )
-                })
-            }
-        </ul>
-    )
-}
-
+const emojiData: any = Object.entries(data.emojis);
 const EmojiPicker = (props: Props): React.ReactElement => {
     const {
         children,
-        visible
+        onSelect,
     } = props;
+
+    const onClick = useCallback((emoji: any) => () => {
+        emoji = {
+            key: emoji[0],
+            code: emoji[1].code,
+            value: emoji[1].value,
+        }
+        onSelect && onSelect(emoji);
+    }, []);
 
     return (
         <Popover
-            content={<Emoji />}
+            content={
+                <ul className='emoji-wrapper'>
+                    {
+                        emojiData.map((it: [a: string, b: { code: string, value: string }]) => {
+                            return (
+                                <li
+                                    className='emoji-native'
+                                    key={it[0]}
+                                    onClick={onClick(it)}
+                                >
+                                    {/* <Tooltip title={it[0]}> */}
+                                        <span>{it[1].value}</span>
+                                    {/* </Tooltip> */}
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
+            }
             title={null}
             placement='top'
             overlayClassName='emoji-modal'
@@ -49,8 +56,5 @@ const EmojiPicker = (props: Props): React.ReactElement => {
             {children}
         </Popover>
     )
-}
-EmojiPicker.defaultProps = {
-    visible: true,
 }
 export default EmojiPicker;

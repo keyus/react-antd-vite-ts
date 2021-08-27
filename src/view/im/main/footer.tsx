@@ -1,5 +1,5 @@
 
-import { useCallback, useRef } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { Mentions, Tooltip } from 'antd'
 import EmojiPicker from '@com/emoji'
 
@@ -19,12 +19,13 @@ const { Option } = Mentions;
  */
 export default () => {
 
+    const [value, setValue] = useState('');
     //发送信息
     const sendMessage = useCallback(() => {
         console.log('enter: handle something message send');
-
     }, []);
 
+    //回车发送
     const onKeyPress = useCallback((e) => {
         // not shift + enter
         if (e.which === 13 && !e.shiftKey) {
@@ -33,13 +34,19 @@ export default () => {
         }
     }, []);
 
+    //同步mention值
+    const onChangeValue = useCallback((val) => {
+        setValue(val);
+    }, []);
+
+    //选择表情
+    const onSelectEmoji = useCallback((emoji) => setValue((val: any) => val + emoji.value), []);
 
 
     return (
         <div className='im-main-footer'>
-            {/* <NimblePicker native data={data} />  */}
             <div className='it-top'>
-                <EmojiPicker><span className='icon-tool'><IconFace /></span></EmojiPicker>
+                <EmojiPicker onSelect={onSelectEmoji}><span className='icon-tool'><IconFace /></span></EmojiPicker>
                 <span className='icon-tool'><IconPicture /></span>
                 <span className='icon-tool'><IconFile /></span>
                 <span className='icon-tool'><IconVideo /></span>
@@ -48,10 +55,11 @@ export default () => {
 
             <div className='im-input'>
                 <Mentions
+                    value={value}
+                    onChange={onChangeValue}
                     className='im-mentions'
                     autoSize={{ minRows: 3 }}
                     onKeyPress={onKeyPress}
-                    // onPressEnter={onPressEnter}
                     autoFocus
                     placement="top">
                     <Option value="afc163">afc163</Option>

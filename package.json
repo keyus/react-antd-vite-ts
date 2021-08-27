@@ -49,6 +49,6 @@
     "build": "tsc && vite build",
     "build-zip": "tsc && vite build && node auto.zip.js",
     "zip": "node auto.zip.js",
-    "commit": "git add -A && git commit -m 'message' && git push"
+    "commit": "git add -A && git commit -m 'add emoji' && git push"
   }
 }
