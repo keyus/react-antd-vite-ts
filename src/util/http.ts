@@ -6,11 +6,9 @@ const logout = () => {
     store.dispatch({ type: 'logout' })
 }
 
-//提示api错误信息
-const tipQue: any[] = [];
-const tipError = (msg: any, timeout: number = 3) => {
-    if (!tipQue.length) tipQue.push(message.error(msg, timeout, () => { tipQue.pop() }));
-}
+message.config({
+    maxCount: 1,
+});
 
 /**
  * 一个简单的fetch 封装
@@ -120,13 +118,13 @@ class Http {
 
                 // 有些code不需要错误通知，如提示绑定手机号等 也可以移动 成功code resolve回去
                 if (![1001, 1002].includes(code)) {
-                    tipError(msg)
+                    message.error(msg)
                 }
 
                 return reject(res);
 
             }).catch(err => {
-                tipError(err.message || 'Network response was not ok.')
+                message.error(err.message || 'Network response was not ok.')
                 reject(err);
             });
         })
@@ -134,10 +132,4 @@ class Http {
 }
 
 
-const http: Http = new Http();
-const func = (url: string, data?: any, options = { method: 'post' }): Promise<any> => {
-    return http.send(url, data, options);
-}
-func.get = http.get.bind(http);
-func.post = http.post.bind(http);
-export default func;
+export default new Http();

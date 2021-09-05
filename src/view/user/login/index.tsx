@@ -17,7 +17,7 @@ const Login = () => {
     const onFinish = async (values: any) => {
         console.log('Success login:', values);
 
-        // http is global const has get post method
+        // http is global const has get and post method
         // const res = await http.get('/query4', {
         //     shouji: '1580281/=+6160',
         //     appkey: '467',
