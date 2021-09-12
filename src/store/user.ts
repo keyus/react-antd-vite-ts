@@ -24,8 +24,9 @@ export const user = createSlice({
         },
     },
     /**
-     * 而上面的reducer action name 为   'user/login'
-     * 扩展的reducer action 水含前缀引导 即   action 'logout' 
+     * 上面的reducer action name 为   'user/login'
+     * 
+     * 扩展的reducer action 不含前缀引导 即   action 'logout' 
      * 如果调用 type: 'logout' 则所有reducer  logout都会执行  
      */
     extraReducers: {

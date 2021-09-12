@@ -25,8 +25,8 @@
       "@config" : ["src/config"],
       "@style/*" : ["src/assets/style"],
       "@img/*" : ["src/assets/img"],
-      "@view" : ["src/view"],
-      "@view/*" : ["src/view/*"],
+      "@page" : ["src/page"],
+      "@page/*" : ["src/page/*"],
     }
   },
   "include": [

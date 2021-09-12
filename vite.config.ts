@@ -33,7 +33,7 @@ export default defineConfig(({ mode }): any => {
         '@config': path.resolve(__dirname, 'src/config'),
         '@style': path.resolve(__dirname, 'src/assets/style'),
         '@img': path.resolve(__dirname, 'src/assets/img'),
-        '@view': path.resolve(__dirname, 'src/view'),
+        '@page': path.resolve(__dirname, 'src/page'),
       },
     },
 

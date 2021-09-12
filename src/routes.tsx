@@ -1,12 +1,12 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import Layout from '@view'
-import Login from '@view/user/login'
-import Bind from '@view/user/bind'
+import Layout from '@page'
+import Login from '@page/user/login'
+import Bind from '@page/user/bind'
 
-import Im from '@view/im'
-import Control from '@view/control'
-import Email from '@view/email'
-import Files from '@view/files'
+import Im from '@page/im'
+import Control from '@page/control'
+import Email from '@page/email'
+import Files from '@page/files'
 
 const routes = (isLogin: boolean) => {
   return [
@@ -15,7 +15,7 @@ const routes = (isLogin: boolean) => {
     { path: '/bind', element: <Bind /> },
 
     // 需要登陆访问路由
-    {
+    { 
       path: '/',
       element: isLogin ? <Layout /> : <Navigate to="/login" />,
       children: [
