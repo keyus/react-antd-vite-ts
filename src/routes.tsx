@@ -13,13 +13,13 @@ const routes = (isLogin: boolean) => {
     // 公共路由
     { path: '/login', element: <Login /> },
     { path: '/bind', element: <Bind /> },
-    
+
     // 需要登陆访问路由
     {
       path: '/',
       element: isLogin ? <Layout /> : <Navigate to="/login" />,
       children: [
-        { path: '/', element: <Im /> },
+        { index: true, element: <Im /> },
         { path: 'control', element: <Control /> },
         { path: 'email', element: <Email /> },
         { path: 'files', element: <Files /> },
