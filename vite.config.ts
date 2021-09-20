@@ -4,9 +4,7 @@ import styleImport from 'vite-plugin-style-import'
 import inject from '@rollup/plugin-inject'
 import svgr from '@svgr/rollup'
 import { injectHtml } from 'vite-plugin-html'
-
 // import legacy from '@vitejs/plugin-legacy'
-// const { getThemeVariables } = require('antd/dist/theme');
 
 const path = require('path');
 const envDir = '.env';
@@ -18,10 +16,6 @@ export default defineConfig(({ mode }): any => {
       preprocessorOptions: {
         less: {
           javascriptEnabled: true,
-          // modifyVars: getThemeVariables({
-          //   dark: true,       // 开启暗黑模式
-          //   compact: true,    // 开启紧凑模式
-          // }),
         },
       },
     },
@@ -76,9 +70,7 @@ export default defineConfig(({ mode }): any => {
 
 
     server: {
-      // https: true,
       proxy: {
-        // '/foo': 'http://localhost:4567/foo',
         '/api/query4': {
           target: 'https://way.jd.com/jisuapi',
           changeOrigin: true,
@@ -87,11 +79,6 @@ export default defineConfig(({ mode }): any => {
             return path.replace(/^\/api/, '');
           }
         },
-        // '^/fallback/.*': {
-        //   target: 'http://jsonplaceholder.typicode.com',
-        //   changeOrigin: true,
-        //   rewrite: (path) => path.replace(/^\/fallback/, '')
-        // },
       }
     },
     build: {
