@@ -1,7 +1,7 @@
 
 import { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Outlet, useNavigate, useLocation } from 'react-router-dom'
+import { Outlet, useNavigate, useLocation, matchPath, matchRoutes, useMatch } from 'react-router-dom'
 import { Layout, Avatar, Dropdown, Menu } from 'antd'
 import { LoginOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, MediumOutlined, PieChartOutlined, DesktopOutlined, ContainerOutlined, MessageOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
 import IconUserAvatar from '@img/user-avatar.svg';
@@ -12,7 +12,16 @@ const { Header, Sider, Content } = Layout;
 
 
 export default (props = {}) => {
+
+
     const { pathname } = useLocation();
+    // const res = matchPath({
+    //     path: '/files/*',
+    //     caseSensitive: true,
+    //     end: true,
+    // }, pathname);
+    // console.log('111:', res);
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [collapsed, setCollapsed] = useState(false);

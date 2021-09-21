@@ -16,13 +16,13 @@ const routes = (isLogin: boolean) => {
 
     // 需要登陆访问路由
     { 
-      path: '/',
+      path: '/*',
       element: isLogin ? <Layout /> : <Navigate to="/login" />,
       children: [
         { index: true, element: <Im /> },
         { path: 'control', element: <Control /> },
         { path: 'email', element: <Email /> },
-        { path: 'files', element: <Files /> },
+        { path: 'files/*', element: <Files /> },
       ],
     },
     // {
