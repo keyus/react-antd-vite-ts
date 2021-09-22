@@ -1,5 +1,5 @@
 
-import { createSlice, original } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 let localUser: any = localStorage.getItem('user');
 try {
@@ -18,9 +18,8 @@ export const user = createSlice({
     initialState,
     reducers: {
         login: (state, action) => {
-            console.log('state', original(state), action);
             state.isLogin = true;
-            localStorage.setItem('user', JSON.stringify(state))
+            localStorage.setItem('user', JSON.stringify(state));
         },
     },
     /**
@@ -39,5 +38,5 @@ export const user = createSlice({
 
 })
 
-export const { login, } = user.actions;
+export const { login } = user.actions;
 export default user.reducer

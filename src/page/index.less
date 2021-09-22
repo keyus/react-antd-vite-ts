@@ -4,12 +4,18 @@ body,
     height: 100%;
 }
 
+
+@menu-bg                 : transparent;
+@menu-default-link-color : rgba(255, 255, 255, 0.7);
+@menu-selected-link-color: #fff;
+@menu-hilight-link-color : #fff;
+@menu-selected-bg-color  : rgba(255, 255, 255, 0.1);
+
 .main-layout {
     height: 100%;
 
     .main-side {
         background-color: #252f3e;
-
 
         .main-logo {
             height          : 64px;
@@ -51,29 +57,60 @@ body,
         }
 
         .main-menu {
-            background-color: transparent;
+            background-color: @menu-bg;
             border-right    : none;
             padding         : 0 10px;
 
+            .ant-menu-sub.ant-menu-inline {
+                background-color: @menu-bg;
+            }
+
             li {
-                color      : rgba(255, 255, 255, 0.7);
+                color      : @menu-default-link-color;
                 font-weight: 500;
 
+                &.ant-menu-item:active {
+                    background: transparent;
+                }
+
                 &.ant-menu-item-selected {
-                    color           : rgb(255, 255, 255);
+                    color           : @menu-selected-link-color;
                     transition      : border-radius 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s;
                     pointer-events  : none;
                     border-radius   : 6px;
-                    background-color: rgba(255, 255, 255, 0.1) !important;
+                    background-color: @menu-selected-bg-color  !important;
 
                     &::after {
                         display: none;
                     }
                 }
 
-                &.ant-menu-item:active,
-                &.ant-menu-submenu-title:active {
-                    background: transparent;
+                &.ant-menu-submenu-active {
+                    color: @menu-selected-link-color;
+                }
+
+                &.ant-menu-submenu-selected {
+                    .ant-menu-submenu-title {
+                        color: @menu-selected-link-color;
+
+                        .ant-menu-submenu-arrow {
+                            color: @menu-selected-link-color;
+                        }
+                    }
+                }
+
+                .ant-menu-submenu-title {
+                    &:active {
+                        background-color: transparent;
+                    }
+
+                    &:hover {
+                        color: @menu-hilight-link-color;
+                    }
+
+                    .ant-menu-submenu-arrow {
+                        color: @menu-default-link-color;
+                    }
                 }
             }
         }
@@ -88,8 +125,8 @@ body,
             padding         : 0 20px 0 6px;
 
             .left {
-                flex: 1;
-                display: flex;
+                flex       : 1;
+                display    : flex;
                 align-items: center;
 
                 .toggle-side {
@@ -106,14 +143,18 @@ body,
                         background-color: rgba(60, 64, 67, 0.078);
                     }
                 }
-                .im-info{
+
+                .im-info {
                     margin-left: 8px;
-                    span{
+
+                    span {
                         margin-right: 10px;
-                        em{
-                            font-style: normal;
+
+                        em {
+                            font-style : normal;
                             font-weight: 700;
-                            &.red{
+
+                            &.red {
                                 color: red;
                             }
                         }
@@ -196,7 +237,7 @@ body,
                     .name {
                         margin-right: 10px;
                         font-weight : 500;
-                        cursor: pointer;
+                        cursor      : pointer;
                     }
                 }
             }

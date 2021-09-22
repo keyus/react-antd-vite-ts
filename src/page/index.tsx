@@ -1,19 +1,18 @@
 
 import { useCallback, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Outlet, useNavigate, useLocation, matchPath, matchRoutes, useMatch } from 'react-router-dom'
+import { Outlet, useNavigate, useLocation, matchPath, } from 'react-router-dom'
 import { Layout, Avatar, Dropdown, Menu } from 'antd'
-import { LoginOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, MediumOutlined, PieChartOutlined, DesktopOutlined, ContainerOutlined, MessageOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
+import { LoginOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, MediumOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
 import IconUserAvatar from '@img/user-avatar.svg';
+import { menus } from '../routes'
 import './index.less'
 
 
 const { Header, Sider, Content } = Layout;
-
+const { SubMenu } = Menu;
 
 export default (props = {}) => {
-
-
     const { pathname } = useLocation();
     // const res = matchPath({
     //     path: '/files/*',
@@ -56,18 +55,29 @@ export default (props = {}) => {
                     className='main-menu'
                     mode="inline"
                 >
-                    <Menu.Item key="/" icon={<MessageOutlined />}>
-                        聊天
-                    </Menu.Item>
-                    <Menu.Item key="/control" icon={<PieChartOutlined />}>
-                        控制台
-                    </Menu.Item>
-                    <Menu.Item key="/email" icon={<DesktopOutlined />}>
-                        邮件
-                    </Menu.Item>
-                    <Menu.Item key="/files" icon={<ContainerOutlined />}>
-                        文件管理
-                    </Menu.Item>
+                    {
+                        menus.map((it: Obj) => {
+                            if (Array.isArray(it.children)) {
+                                return (
+                                    <SubMenu
+                                        key={it.url}
+                                        title={it.title}
+                                        icon={it.icon}>
+                                        {
+                                            it.children.map((son: Obj) => {
+                                                return (
+                                                    <Menu.Item key={son.url}>{son.title}</Menu.Item>
+                                                )
+                                            })
+                                        }
+                                    </SubMenu>
+                                )
+                            }
+                            return (
+                                <Menu.Item key={it.url} icon={it.icon}>{it.title}</Menu.Item>
+                            )
+                        })
+                    }
                 </Menu>
             </Sider>
             <Layout className='main-body'>

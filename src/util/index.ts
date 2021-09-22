@@ -1,4 +1,3 @@
-
 //xhr, axios, response or fetch response
 interface Response {
     headers: any,
@@ -27,5 +26,6 @@ class Util {
         a.click();
         window.URL.revokeObjectURL(url);
     }
+   
 }
 export default new Util();
