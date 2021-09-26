@@ -20,6 +20,11 @@ export default function routes(isLogin?: boolean) {
     { path: '/bind', element: <Bind /> },
 
     // 需要登陆访问路由
+    /**
+     * path     react router path 路由path
+     * match    菜单命中 规则 
+     * url      菜单 url 跳转地址
+     */
     {
       path: '/',
       element: isLogin ? <Layout /> : <Navigate to="/login" />,

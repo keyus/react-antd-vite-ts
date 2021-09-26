@@ -5,7 +5,7 @@ import { Outlet, useNavigate, useLocation, } from 'react-router-dom'
 import { Layout, Avatar, Dropdown, Menu } from 'antd'
 import { LoginOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, MediumOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
 import IconUserAvatar from '@img/user-avatar.svg';
-import { menus, menusFlat } from '../routes'
+import { menus } from '../routes'
 import './index.less'
 
 
@@ -13,10 +13,10 @@ const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
 
-export default (props = {}) => {
+export default () => {
     const { pathname } = useLocation();
 
-    const selectedKeys = useMemo(() => util.matchMenus(pathname), [pathname]);
+    const selectedKeys = useMemo(() => util.matchMenus(pathname), []);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [collapsed, setCollapsed] = useState(false);
@@ -46,7 +46,7 @@ export default (props = {}) => {
                     <span className='app-name'>{config.appName}</span>
                 </h1>
                 <Menu
-                    selectedKeys={selectedKeys}
+                    defaultSelectedKeys={selectedKeys}
                     defaultOpenKeys={selectedKeys}
                     onClick={onClickMenus}
                     className='main-menu'
