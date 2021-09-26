@@ -12,7 +12,7 @@ const Login = () => {
     const dispatch = useDispatch();
 
     const [error, setError] = useState('');
-    const [visible, setVisible] = useState(true);
+    const [visible, setVisible] = useState(false);
 
     const onFinish = async (values: any) => {
         console.log('Success login:', values);
@@ -46,27 +46,24 @@ const Login = () => {
                 <Form.Item
                     className='form-item'
                     name="username"
-                    validateStatus='success'
                     rules={[{ required: true, message: '请输入用户名' }]}
                 >
                     <Input
+                        size='large'
                         prefix={<UserOutlined />}
                         onInput={() => setError('')}
-                        placeholder='请输入用户名' />
+                        placeholder='用户名' />
                 </Form.Item>
 
                 <Form.Item
                     name="password"
-                    className={
-                        `form-item ${visible ? 'form-has-code' : ''}`
-                    }
-                    validateStatus='success'
                     rules={[{ required: true, message: '请输入密码' }]}
                 >
                     <Input.Password
+                        size='large'
                         prefix={<UnlockOutlined />}
                         onInput={() => setError('')}
-                        placeholder='请输入密码' />
+                        placeholder='密码' />
                 </Form.Item>
 
                 {
@@ -74,21 +71,15 @@ const Login = () => {
                     <Form.Item
                         name="code"
                         className='form-item'
-                        validateStatus='success'
                         rules={[{ required: true, message: '请输入验证码' }]}
                     >
                         <Input
+                            size='large'
                             prefix={<DribbbleOutlined />}
                             onInput={() => setError('')}
                             placeholder='请输入验证码' />
                     </Form.Item>
                 }
-
-                <div className='login-error'>
-                    {
-                        error ? <ExclamationCircleOutlined /> : null
-                    }{error}
-                </div>
 
                 <Form.Item className='form-submit'>
                     <Button

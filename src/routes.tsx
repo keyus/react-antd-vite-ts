@@ -21,7 +21,7 @@ export default function routes(isLogin?: boolean) {
 
     // 需要登陆访问路由
     /**
-     * path     react router path 路由path
+     * path     react router path 路由path 由于path使用相对路由. 所以 path , match无法共享
      * match    antd menus 组件 default selectedKey openKey命中 规则 
      * url      菜单 url 跳转地址
      */

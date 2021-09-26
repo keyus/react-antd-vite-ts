@@ -7,21 +7,21 @@
     background         : #f7f8fa;
     background-image   : url('@img/bg.svg');
     background-repeat  : no-repeat;
-    background-position: center 110px;
-    background-size    : 100%;
+    background-position: center;
+    background-size    : cover
 }
 
 .login-logo {
     display        : flex;
     align-items    : center;
     justify-content: center;
-    margin-top     : -50px;
+    margin-top     : -8%;
 
 
     h1 {
         font-size       : 60px;
         font-weight     : 300;
-        color           : #3375a1;
+        color: rgba(0, 0, 0, 0.85);
         border-radius   : 50%;
         border          : 1px solid #ddd;
         background-color: #fff;
@@ -33,80 +33,13 @@
     }
 }
 
-.login-error {
-    height     : 40px;
-    text-align : right;
-    color      : #d60000;
-    font-size  : 13px;
-    padding-top: 5px;
-
-    .anticon {
-        margin-right: 4px;
-    }
-}
-
 .login-form {
-    width: 300px;
-
-
-
-    .form-item {
-        margin-bottom: 0;
-
-        &:first-of-type {
-            .ant-input-affix-wrapper {
-                border-bottom-left-radius : 0;
-                border-bottom-right-radius: 0;
-            }
-        }
-
-        &:nth-of-type(2) {
-            .ant-input-affix-wrapper {
-                border-top             : none;
-                border-top-left-radius : 0;
-                border-top-right-radius: 0;
-            }
-        }
-
-        &:nth-of-type(3) {
-            .ant-input-affix-wrapper {
-                border-top             : none;
-                border-top-left-radius : 0;
-                border-top-right-radius: 0;
-            }
-        }
-
-        .ant-form-item-explain {
-            display: none;
-        }
-
-        .anticon {
-            color: #989998;
-        }
-
-        .ant-input-affix-wrapper {
-            border-radius: 4px;
-        }
-
-    }
-
-    .form-has-code {
-        .ant-input-affix-wrapper {
-            border-bottom-left-radius : 0;
-            border-bottom-right-radius: 0;
-        }
-    }
-
-    input {
-        border     : 1px solid #e5e4e4;
-        line-height: 34px;
-    }
+    width: 328px;
 
     .form-submit {
-
         .submit-btn {
+            margin-top: 15px;
             width     : 100%;
-            background: linear-gradient(151deg, #35d6c4, #0084f6);
             border: none;
             font-weight: 500;
         }
