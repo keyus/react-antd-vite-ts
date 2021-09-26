@@ -22,7 +22,7 @@ export default function routes(isLogin?: boolean) {
     // 需要登陆访问路由
     /**
      * path     react router path 路由path
-     * match    菜单命中 规则 
+     * match    antd menus 组件 default selectedKey openKey命中 规则 
      * url      菜单 url 跳转地址
      */
     {
