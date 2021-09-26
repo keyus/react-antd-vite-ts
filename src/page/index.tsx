@@ -1,26 +1,22 @@
 
-import { useCallback, useState } from 'react'
+import { useCallback, useState, useMemo } from 'react'
 import { useDispatch } from 'react-redux'
-import { Outlet, useNavigate, useLocation, matchPath, } from 'react-router-dom'
+import { Outlet, useNavigate, useLocation, } from 'react-router-dom'
 import { Layout, Avatar, Dropdown, Menu } from 'antd'
 import { LoginOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, MediumOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
 import IconUserAvatar from '@img/user-avatar.svg';
-import { menus } from '../routes'
+import { menus, menusFlat } from '../routes'
 import './index.less'
 
 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
 
+
 export default (props = {}) => {
     const { pathname } = useLocation();
-    // const res = matchPath({
-    //     path: '/files/*',
-    //     caseSensitive: true,
-    //     end: true,
-    // }, pathname);
-    // console.log('111:', res);
 
+    const selectedKeys = useMemo(() => util.matchMenus(pathname), [pathname]);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [collapsed, setCollapsed] = useState(false);
@@ -50,7 +46,8 @@ export default (props = {}) => {
                     <span className='app-name'>{config.appName}</span>
                 </h1>
                 <Menu
-                    defaultSelectedKeys={[pathname]}
+                    selectedKeys={selectedKeys}
+                    defaultOpenKeys={selectedKeys}
                     onClick={onClickMenus}
                     className='main-menu'
                     mode="inline"

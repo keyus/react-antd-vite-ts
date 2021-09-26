@@ -1,3 +1,6 @@
+import { matchPath } from 'react-router-dom'
+import { menusFlat } from '../routes'
+
 //xhr, axios, response or fetch response
 interface Response {
     headers: any,
@@ -26,6 +29,17 @@ class Util {
         a.click();
         window.URL.revokeObjectURL(url);
     }
-   
+
+    matchMenus = (path: string) => {
+        const res = menusFlat.filter(it => {
+            return matchPath({
+                path: it.match,
+                caseSensitive: true,
+                end: true,
+            }, path);
+        })
+        return res.map(it=>it.url);
+    }
+
 }
 export default new Util();
