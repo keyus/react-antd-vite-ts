@@ -46,7 +46,7 @@ export default () => {
                 collapsedWidth={48}
                 className='main-side'>
                 <h1 className={`main-logo ${collapsed ? 'collapsed' : ''}`}>
-                    <MediumOutlined />
+                    {config.logo}
                     <span className='app-name'>{config.appName}</span>
                 </h1>
                 <div className='side-auto'>

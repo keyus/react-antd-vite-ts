@@ -1,6 +1,6 @@
-import { MediumOutlined } from '@ant-design/icons'
+import { ReactComponent as LogoIcon } from '@img/logo.svg'
 
 export default {
-    logo: <MediumOutlined />,
-    appName: 'REACT VVDO',
+    logo: <LogoIcon />,
+    appName: 'REACT-ANTD',
 }

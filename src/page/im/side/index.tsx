@@ -9,7 +9,7 @@ export default () => {
         <div className='im-side'>
             <h2 className='it-top'>
                 <IconMessage width={20} height={20} />
-                聊天
+                在线
                 <div className='it-top-right'>
                 </div>
             </h2>
