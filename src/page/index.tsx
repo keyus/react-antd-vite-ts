@@ -115,7 +115,7 @@ export default () => {
                         </Dropdown>
                     </div>
                 </Header>
-                <Content>
+                <Content className='main-page'>
                     <Outlet />
                 </Content>
             </Layout>
