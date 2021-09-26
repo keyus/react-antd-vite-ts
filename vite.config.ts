@@ -70,6 +70,9 @@ export default defineConfig(({ mode }): any => {
 
 
     server: {
+      fs: {
+        strict: false,
+      },
       proxy: {
         '/api/query4': {
           target: 'https://way.jd.com/jisuapi',

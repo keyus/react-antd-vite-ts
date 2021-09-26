@@ -1,5 +1,5 @@
 {
-  "name": "react-antd-vite-ts",
+  "name": "react-vite-ts",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -10,8 +10,8 @@
     "react-dom": "^17.0.2",
     "redux": "^4.1.1",
     "react-redux": "^7.2.4",
-    "react-router": "^6.0.0-beta.4",
-    "react-router-dom": "^6.0.0-beta.4",
+    "react-router": "^6.0.0-beta.5",
+    "react-router-dom": "^6.0.0-beta.5",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
     "qrcode": "^1.4.4",

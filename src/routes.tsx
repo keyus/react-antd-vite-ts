@@ -20,7 +20,7 @@ const routes = (isLogin?: boolean) => {
 
     // 需要登陆访问路由
     {
-      path: '/*',
+      path: '/',
       element: isLogin ? <Layout /> : <Navigate to="/login" />,
       menu: true,
       children: [
@@ -47,7 +47,7 @@ const routes = (isLogin?: boolean) => {
         },
         {
           title: '文件管理',
-          path: 'files/*',
+          path: 'files',
           url: '/files/*',
           element: <Outlet />,
           icon: <ContainerOutlined />,
