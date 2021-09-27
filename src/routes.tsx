@@ -13,6 +13,8 @@ import Files from '@page/files'
 import FilesRead from '@page/files/read'
 import FilesList from '@page/files/list'
 
+import V404 from '@page/404'
+
 export default function routes(isLogin?: boolean) {
   return [
     // 公共路由
@@ -103,6 +105,8 @@ export default function routes(isLogin?: boolean) {
         },
       ],
     },
+
+    { path: '*', element: <V404 /> },
   ]
 }
 
