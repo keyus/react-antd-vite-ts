@@ -21,6 +21,7 @@ function AppRoutes() {
 
 //亚州 上海时区
 moment.tz.setDefault('Asia/Shanghai');
+
 ReactDOM.render(
   <Provider store={store}>
     <ConfigProvider locale={zhCN}>
@@ -32,3 +33,4 @@ ReactDOM.render(
   ,
   document.getElementById('root')
 )
+
