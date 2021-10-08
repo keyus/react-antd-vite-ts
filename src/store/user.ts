@@ -9,16 +9,16 @@ try {
 }
 
 const initialState = {
-    isLogin: false,
     ...localUser,
+    isLogin: !!localUser,
 }
 
 export const user = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        login: (state, action) => {
-            state.isLogin = true;
+        signin: (state, action) => {
+            Object.assign(state, { ...action.payload, isLogin: true });
             localStorage.setItem('user', JSON.stringify(state));
         },
     },
@@ -29,14 +29,15 @@ export const user = createSlice({
      * 如果调用 type: 'logout' 则所有reducer  logout都会执行  
      */
     extraReducers: {
-        logout: (state) => {
-            console.log('user/logout')
+        signout: () => {
             localStorage.removeItem('user');
-            state = initialState;
+            return {
+                isLogin: false,
+            };
         }
     }
 
 })
 
-export const { login } = user.actions;
+export const { signin } = user.actions;
 export default user.reducer

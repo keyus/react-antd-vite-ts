@@ -2,13 +2,9 @@ import store from '@store'
 import { message } from 'antd'
 
 //退出系统
-const logout = () => {
-    store.dispatch({ type: 'logout' })
+const signout = () => {
+    store.dispatch({ type: 'signout' })
 }
-
-message.config({
-    maxCount: 1,
-});
 
 /**
  * 一个简单的fetch 封装
@@ -113,7 +109,7 @@ class Http {
                 // 其它部分操作，并统一弹出错误 api server msg 信息
                 // api server 约定未登陆、登陆过期、无权访问等退出系统 code
                 if ([401, 402, 403].includes(code)) {
-                    logout();
+                    signout();
                 }
 
                 // 有些code不需要错误通知，如提示绑定手机号等 也可以移动 成功code resolve回去

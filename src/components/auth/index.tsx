@@ -1,7 +1,7 @@
 
 import { Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch, } from 'react-redux'
-import { login } from '@store/user'
+import { signin } from '@store/user'
 import type { RootState } from '@store'
 
 
@@ -19,11 +19,11 @@ export const useAuth = () => {
     const navigate = useNavigate();
     return {
         signin(data: Obj) {
-            dispatch(login(data));
+            dispatch(signin(data));
             navigate('/')
         },
         signout() {
-            dispatch({ type: 'logout' });
+            dispatch({ type: 'signout' });
             navigate('/login')
         }
     }
