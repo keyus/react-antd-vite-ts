@@ -32,10 +32,8 @@ export default defineConfig(({ mode }): any => {
     },
 
     plugins: [
-
       reactRefresh(),
       svgr(),
-
       styleImport({
         libs: [{
           libraryName: 'antd',

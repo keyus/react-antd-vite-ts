@@ -1,13 +1,12 @@
 
-import { useCallback, useState, useMemo } from 'react'
-import { useDispatch } from 'react-redux'
-import { Outlet, useNavigate, useLocation, } from 'react-router-dom'
+import { useCallback, useState, useMemo,  } from 'react'
+import { Outlet, useNavigate, useLocation,  } from 'react-router-dom'
 import { Layout, Avatar, Dropdown, Menu } from 'antd'
-import { LoginOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, MediumOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
+import { LoginOutlined, MenuFoldOutlined, MenuUnfoldOutlined, UserOutlined, CaretDownOutlined, SettingOutlined } from '@ant-design/icons'
 import IconUserAvatar from '@img/user-avatar.svg';
 import { menus } from '../routes'
+import { useAuth } from '@com/auth'
 import './index.less'
-
 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
@@ -15,14 +14,13 @@ const { SubMenu } = Menu;
 
 export default () => {
     const { pathname } = useLocation();
+    const auth = useAuth();
 
     const selectedKeys = useMemo(() => util.matchMenus(pathname), []);
-    const dispatch = useDispatch();
     const navigate = useNavigate();
     const [collapsed, setCollapsed] = useState(false);
     const onLogout = useCallback(() => {
-        dispatch({ type: 'logout' });
-        navigate('/login')
+        auth.signout();
     }, []);
     const onClickMenus = useCallback(({ key }) => {
         navigate(key)
@@ -81,7 +79,7 @@ export default () => {
                             })
                         }
                     </Menu>
-                    
+
                 </div>
                 <div className='sider-links' onClick={onToggleSide}>
                     {

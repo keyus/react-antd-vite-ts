@@ -1,33 +1,21 @@
 import { useState } from 'react';
 import { Form, Input, Button, } from 'antd';
-import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { UnlockOutlined, UserOutlined, ExclamationCircleOutlined, DribbbleOutlined } from '@ant-design/icons'
-import { login } from '@store/user'
+import { UnlockOutlined, UserOutlined, DribbbleOutlined } from '@ant-design/icons'
+import { useAuth } from '@com/auth'
 import './index.less'
 
 
 const Login = () => {
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-
-    const [error, setError] = useState('');
-    const [visible, setVisible] = useState(false);
-
+    const auth = useAuth();
+    const [visible, setVisible] = useState(false)
     const onFinish = async (values: any) => {
         console.log('Success login:', values);
-
         // http is global const has get and post method
         // const res = await http.get('/query4', {
         //     shouji: '1580281/=+6160',
         //     appkey: '467',
         // })
-        dispatch(login({ username: 'stringss' }));
-        navigate('/')
-    };
-
-    const onFinishFailed = (errorInfo: any) => {
-        setError(errorInfo.errorFields[0].errors)
+        auth.signin({ username: 'stringss' })
     };
 
     return (
@@ -41,7 +29,6 @@ const Login = () => {
                 name="basic"
                 className='login-form'
                 onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
             >
                 <Form.Item
                     className='form-item'
@@ -51,7 +38,6 @@ const Login = () => {
                     <Input
                         size='large'
                         prefix={<UserOutlined />}
-                        onInput={() => setError('')}
                         placeholder='用户名' />
                 </Form.Item>
 
@@ -62,7 +48,6 @@ const Login = () => {
                     <Input.Password
                         size='large'
                         prefix={<UnlockOutlined />}
-                        onInput={() => setError('')}
                         placeholder='密码' />
                 </Form.Item>
 
@@ -76,7 +61,6 @@ const Login = () => {
                         <Input
                             size='large'
                             prefix={<DribbbleOutlined />}
-                            onInput={() => setError('')}
                             placeholder='请输入验证码' />
                     </Form.Item>
                 }
